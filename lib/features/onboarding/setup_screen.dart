@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/custom_button.dart';
 import 'package:gym_app/core/utils/colors.dart';
+import 'package:gym_app/features/onboarding/gender_screen.dart';
 
 class MotivationScreen extends StatelessWidget {
   const MotivationScreen({super.key});
@@ -8,10 +9,9 @@ class MotivationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.blackColor,
       body: Column(
         children: [
-        
           Expanded(
             flex: 4,
             child: Stack(
@@ -21,12 +21,11 @@ class MotivationScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/setup.png'), // Replace with your image
+                          'assets/images/setup.png'), 
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -35,12 +34,11 @@ class MotivationScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            
-                const Text(
+                Text(
                   "Consistency Is\nThe Key To Progress.\nDon't Give Up!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.yellowAccent,
+                    color: AppColors.secondaryColor,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
@@ -68,10 +66,12 @@ class MotivationScreen extends StatelessWidget {
                 // Custom Button
                 CustomButton(
                   buttonText: "Next",
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GenderSelectionScreen()));
+                  },
                   width: 178,
                   height: 44,
-                  buttonColor: AppColors.blackColor,
+                 buttonColor: Color(0xff373737),
                   borderRadius: 30,
                 ),
               ],
