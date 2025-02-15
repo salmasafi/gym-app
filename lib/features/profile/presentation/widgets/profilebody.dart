@@ -8,7 +8,7 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width:393 ,
+          width:393,
           height: 320,
           child: Stack(
             children: [
@@ -47,25 +47,63 @@ class Body extends StatelessWidget {
                     width: 323,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color(0xff896CFE),
+
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text("data"),
-                            Text("data"),
-                          ],
-                        ),
-                      ],
+                    child: Card(
+                      color: Color(0xff896CFE),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Text("75 Kg"), Text("Wieght"),
+                            ],
+                          ),
+                      SizedBox(width: 20,),
+                      Column(
+                        children: [
+                          Text("28"), Text("Years Old"),
+                            ],
+                          ),
+                          SizedBox(width: 20,),
+                          Column(
+                            children: [
+                              Text("1.65 CM"), Text("Height"),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   )
               ),
             ],
           ),
         ),
+        SizedBox(height: 30,),
+        buildMenuItem(Icons.person, "Profile"),
+        buildMenuItem(Icons.star_rounded, "Favorite"),
+        buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
+        buildMenuItem(Icons.settings, "Settings"),
+        buildMenuItem(Icons.phone_callback_sharp, "Help"),
+        buildMenuItem(Icons.exit_to_app_rounded, "Logout")
+
       ],
     );
   }
+  Widget buildMenuItem(IconData icon, String text) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor:  Color(0xff896CFE),
+        child: Icon(icon, color: Colors.white, size:40,),
+      ),
+      title: Text(text, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight:FontWeight.w400),),
+      trailing: Icon(Icons.arrow_right, color: Colors.amberAccent,),
+      onTap: () {
+        // Handle menu tap
+      },
+    );
+  }
 }
+
+
