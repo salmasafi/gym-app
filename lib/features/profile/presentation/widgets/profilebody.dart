@@ -13,6 +13,16 @@ class Body extends StatelessWidget {
           color: Color(0xffB3A0FF),
           child: Column(
             children: [
+              SizedBox( height: 30),
+              Row(
+                children: [
+                  Icon(Icons.arrow_left),
+
+                  Text("My Profile",style: TextStyle(
+                    fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white
+                  ),),
+                ],
+              ),
               Positioned(
                 top: 95,
                 left: 132,
@@ -27,6 +37,7 @@ class Body extends StatelessWidget {
               Text("name"),
               Text("email.com"),
               Text("Birthday:date"),
+              Text("git ")
 
             ],
           ),
