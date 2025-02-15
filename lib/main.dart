@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/profile/presentation/screens/6.1profile.dart';
 import 'package:gym_app/setup_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,6 +20,7 @@ class MainApp extends StatelessWidget {
         return const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MotivationScreen(),
+          //home: SixdotOneProfileScreen(),
     );
     }
 
