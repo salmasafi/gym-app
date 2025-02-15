@@ -11,7 +11,6 @@ class MotivationScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-        
           Expanded(
             flex: 4,
             child: Stack(
@@ -47,7 +46,6 @@ class MotivationScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            
                 const Text(
                   "Consistency Is\nThe Key To Progress.\nDon't Give Up!",
                   textAlign: TextAlign.center,
