@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,17 +10,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(393, 852),
-      minTextAdapt: true,
-      splitScreenMode: true,
-       builder: (_, child){
-        return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MotivationScreen(),
-    );
-    }
-
+    return const MaterialApp(
+      home: Login_3_A(),
     );
   }
 }
