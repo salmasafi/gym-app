@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/setup_screen.dart';
+import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -8,7 +8,7 @@ void main() {
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-////////////////////////////////////////////////////
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

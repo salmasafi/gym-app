@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/core/custom_button.dart';
+import 'package:gym_app/core/widgets/custom_button.dart';
 import 'package:gym_app/core/utils/colors.dart';
 
 class MotivationScreen extends StatelessWidget {
