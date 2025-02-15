@@ -23,8 +23,8 @@ class MainApp extends StatelessWidget {
        builder: (_, child){
         return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        //home: MotivationScreen(),
-          home: SixdotOneProfileScreen(),
+        home: MotivationScreen(),
+          //home: SixdotOneProfileScreen(),
     );
     }
 
