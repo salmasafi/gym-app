@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 class SignUp_Icons extends StatelessWidget {
   const SignUp_Icons({
@@ -114,8 +115,9 @@ class Name_For_TextField extends StatelessWidget {
       padding: EdgeInsets.only(left: ScreenWidth * 0.14),
       child: Text(Name,
           style: TextStyle(
+              fontSize: ScreenWidth * 0.035,
               fontFamily: 'League Spartan',
-              color: Colors.black,
+              color: Color(0xFF232323),
               fontVariations: [
                 FontVariation('ital', 0),
                 FontVariation('wght', 500)
@@ -140,7 +142,10 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
-          fixedSize: Size(Screenheight * 0.2, Screenheight * 0.05)),
+        minimumSize: Size(Screenheight * 0.25, Screenheight * 0.05),
+        shadowColor: Color(0x00000040),
+        backgroundColor: Color(0xFFFFFFF).withOpacity(0.09),
+      ),
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
@@ -149,9 +154,12 @@ class Button extends StatelessWidget {
         ));
       },
       child: Text(
-        "$NameButton",
-        style:
-            TextStyle(color: Color(0xFFFFFFFF), fontSize: Screenheight * 0.02),
+        NameButton,
+        style: TextStyle(
+            fontFamily: "Poppins",
+            color: Color(0xFFFFFFFF),
+            fontSize: Screenheight * 0.02,
+            fontWeight: FontWeight.w700),
       ),
     );
   }

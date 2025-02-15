@@ -49,7 +49,9 @@ class setPassword extends StatelessWidget {
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                 style: GoogleFonts.leagueSpartan(
-                    color: Colors.white, fontSize: Screenheight * 0.015),
+                    color: Colors.white,
+                    fontSize: Screenheight * 0.015,
+                    fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,
               ),
             ),

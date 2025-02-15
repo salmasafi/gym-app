@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
 import 'package:gym_app/Widgets/Widgets.dart';
 
+// This is the Sign Up Screen
 class Login_3_B extends StatelessWidget {
   const Login_3_B({super.key});
 
@@ -79,40 +81,61 @@ class Login_3_B extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: Screenheight * 0.04),
-            Text(
-              'By continuing, you agree to',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
+            SizedBox(height: Screenheight * 0.02),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    text: 'By continuing, you agree to',
+                    style: TextStyle(
+                      fontFamily: "League Spartan",
+                      color: Colors.white,
+                      fontSize: Screenheight * 0.014,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ),
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Terms of Use',
+                        style: TextStyle(
+                          fontFamily: "League Spartan",
+                          color: Color(0xFFE2F163),
+                          fontWeight: FontWeight.w500,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                      ),
+                      TextSpan(
+                        text: ' and ',
+                        style: TextStyle(
+                          fontFamily: "League Spartan",
+                          color: Colors.white,
+                          fontSize: Screenheight * 0.014,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        style: TextStyle(
+                          fontFamily: "League Spartan",
+                          color: Color(
+                            0xFFE2F163,
+                          ),
+                          fontWeight: FontWeight.w500,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(),
-                child: Text(
-                  'Terms of Use',
-                  style: TextStyle(
-                    color: Color(0xFFE2F163),
-                  ),
-                ),
-              ),
-              Text(
-                "and",
-                style: TextStyle(color: Colors.white),
-              ),
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(),
-                child: Text(
-                  'Privacy Policy',
-                  style: TextStyle(
-                    color: Color(0xFFE2F163),
-                  ),
-                ),
-              ),
-            ]),
+            SizedBox(height: Screenheight * 0.02),
             Button(
               Screenheight: Screenheight,
               NameButton: "Sign Up",
@@ -121,7 +144,8 @@ class Login_3_B extends StatelessWidget {
             SizedBox(height: Screenheight * 0.02),
             Text(
               "or sign up with",
-              style: TextStyle(color: Color(0xFFFFFFFF)),
+              style: TextStyle(
+                  color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
             ),
             SizedBox(height: Screenheight * 0.01),
             Row(
@@ -152,7 +176,8 @@ class Login_3_B extends StatelessWidget {
               children: [
                 Text(
                   'Already have an account?',
-                  style: TextStyle(color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
                 ),
                 TextButton(
                     onPressed: () {
@@ -160,7 +185,9 @@ class Login_3_B extends StatelessWidget {
                     },
                     child: Text(
                       "Log In",
-                      style: TextStyle(color: Color(0xFFE2F163)),
+                      style: TextStyle(
+                          color: Color(0xFFE2F163),
+                          fontWeight: FontWeight.w300),
                     ))
               ],
             ),

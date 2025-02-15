@@ -9,11 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
   google_fonts: ^6.2.1
-=======
   flutter_screenutil: ^5.9.3
->>>>>>> a208192849b6ecc659e0f0a899ff32ba36738c19
+
 
 dev_dependencies:
   flutter_test:

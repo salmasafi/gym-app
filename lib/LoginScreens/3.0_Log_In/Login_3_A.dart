@@ -4,6 +4,7 @@ import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_B.dart';
 import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/A_3.1_Forgotten_Password.dart';
 import 'package:gym_app/Widgets/Widgets.dart';
 
+// this is the log in screen
 class Login_3_A extends StatelessWidget {
   const Login_3_A({super.key});
 
@@ -47,16 +48,18 @@ class Login_3_A extends StatelessWidget {
             SizedBox(height: Screenheight * 0.05),
             Text("Welcome",
                 style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: Screenheight * 0.03,
-                )),
+                    color: Colors.white,
+                    fontSize: Screenheight * 0.03,
+                    fontWeight: FontWeight.w700)),
             SizedBox(height: Screenheight * 0.05),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.1),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                 style: GoogleFonts.leagueSpartan(
-                    color: Colors.white, fontSize: Screenheight * 0.015),
+                    color: Colors.white,
+                    fontSize: Screenheight * 0.015,
+                    fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -88,11 +91,14 @@ class Login_3_A extends StatelessWidget {
                           },
                         ));
                       },
-                      child: Text("Forgot Password?",
-                          style: GoogleFonts.poppins(
-                            fontSize: Screenheight * 0.014,
-                            color: Color(0xFF232323),
-                          )),
+                      child: Text(
+                        "Forgot Password?",
+                        style: GoogleFonts.poppins(
+                          fontSize: Screenheight * 0.014,
+                          color: Color(0xFF232323),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -106,7 +112,8 @@ class Login_3_A extends StatelessWidget {
             SizedBox(height: Screenheight * 0.04),
             Text(
               "or sign up with",
-              style: TextStyle(color: Color(0xFFFFFFFF)),
+              style: TextStyle(
+                  color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
             ),
             SizedBox(height: Screenheight * 0.01),
             Row(
@@ -137,7 +144,8 @@ class Login_3_A extends StatelessWidget {
               children: [
                 Text(
                   'Don’t have an account?',
-                  style: TextStyle(color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
                 ),
                 TextButton(
                     onPressed: () {
@@ -149,7 +157,9 @@ class Login_3_A extends StatelessWidget {
                     },
                     child: Text(
                       "Sign Up",
-                      style: TextStyle(color: Color(0xFFE2F163)),
+                      style: TextStyle(
+                          color: Color(0xFFE2F163),
+                          fontWeight: FontWeight.w300),
                     ))
               ],
             )

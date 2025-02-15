@@ -46,16 +46,18 @@ class ForgotenPassword extends StatelessWidget {
             SizedBox(height: Screenheight * 0.1),
             Text("Forgot Password?",
                 style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: Screenheight * 0.03,
-                )),
+                    color: Colors.white,
+                    fontSize: Screenheight * 0.03,
+                    fontWeight: FontWeight.w700)),
             SizedBox(height: Screenheight * 0.05),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: ScreenWidth * 0.1),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                 style: GoogleFonts.leagueSpartan(
-                    color: Colors.white, fontSize: Screenheight * 0.015),
+                    color: Colors.white,
+                    fontSize: Screenheight * 0.015,
+                    fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,
               ),
             ),
