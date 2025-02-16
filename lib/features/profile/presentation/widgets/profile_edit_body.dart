@@ -76,13 +76,19 @@ class ProfileEditBody extends StatelessWidget {
                                 Text("75 Kg"), Text("Wieght"),
                               ],
                             ),
-                            SizedBox(width: 20,),
+                            //SizedBox(width: 20,),
+                            Spacer(flex: 1,),
+                            Container(width: 1,height: 30,color: Colors.white),
+                            Spacer(flex: 2,),
                             Column(
                               children: [
                                 Text("28"), Text("Years Old"),
                               ],
                             ),
-                            SizedBox(width: 20,),
+                            Spacer(flex: 2,),
+                            Container(width: 1,height: 30,color: Colors.white),
+                            //SizedBox(width: 20,),
+                            Spacer(flex: 1,),
                             Column(
                               children: [
                                 Text("1.65 CM"), Text("Height"),
@@ -97,13 +103,7 @@ class ProfileEditBody extends StatelessWidget {
               ],
             ),
           ),
-          /*SizedBox(height: 30,),
-          buildMenuItem(Icons.person, "Profile"),
-          buildMenuItem(Icons.star_rounded, "Favorite"),
-          buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
-          buildMenuItem(Icons.settings, "Settings"),
-          buildMenuItem(Icons.phone_callback_sharp, "Help"),
-          buildMenuItem(Icons.exit_to_app_rounded, "Logout")*/
+
           SizedBox(height: 20),
           profileField("Full Name", "Madison Smith"),
           profileField("Email", "madison@email.com"),
@@ -111,6 +111,10 @@ class ProfileEditBody extends StatelessWidget {
           profileField("Date of birth", "date"),
           profileField("Weight", "50kg"),
           profileField("Height", "155"),
+          ElevatedButton(
+              onPressed: (){},
+              style:ElevatedButton.styleFrom(backgroundColor: Colors.yellow,),
+              child: Text("Update Profile", style: TextStyle(color: Colors.black87),), )
 
         ],
       ),
@@ -118,16 +122,24 @@ class ProfileEditBody extends StatelessWidget {
   }
   Widget profileField(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
       child: TextFormField(
         initialValue: value,
         style: TextStyle(color: Colors.black87),
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(15),
+          constraints: BoxConstraints(
+              maxWidth: 322,
+              maxHeight: 45
+          ),
           labelText: label,
-          labelStyle: TextStyle(color: Color(0xff896CFE)),
+          //prefix: SizedBox(height: 10,),
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          labelStyle: TextStyle(color: Color(0xff896CFE),fontSize: 20 , fontWeight: FontWeight.w700),
           filled: true,
           fillColor: Colors.white,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15)),
         ),
       ),
     );
