@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/core/widgets/custom_button.dart';
 import 'package:gym_app/core/utils/colors.dart';
+import 'package:gym_app/core/widgets/custom_button.dart';
+import 'package:gym_app/features/set_up/presentation/screens/gender_screen.dart';
 
 class MotivationScreen extends StatelessWidget {
   const MotivationScreen({super.key});
@@ -8,7 +9,7 @@ class MotivationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.blackColor,
       body: Column(
         children: [
           Expanded(
@@ -20,21 +21,8 @@ class MotivationScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/setup.png'), // Replace with your image
+                          'assets/images/setup.png'), 
                       fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.black.withOpacity(0.1),
-                        Colors.black.withOpacity(0.5),
-                      ],
                     ),
                   ),
                 ),
@@ -46,11 +34,11 @@ class MotivationScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   "Consistency Is\nThe Key To Progress.\nDon't Give Up!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.yellowAccent,
+                    color: AppColors.secondaryColor,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
@@ -68,7 +56,7 @@ class MotivationScreen extends StatelessWidget {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 14,
                     ),
                   ),
@@ -78,10 +66,12 @@ class MotivationScreen extends StatelessWidget {
                 // Custom Button
                 CustomButton(
                   buttonText: "Next",
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GenderSelectionScreen()));
+                  },
                   width: 178,
                   height: 44,
-                  buttonColor: AppColors.blackColor,
+                 buttonColor: Color(0xff373737),
                   borderRadius: 30,
                 ),
               ],
