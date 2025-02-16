@@ -7,6 +7,7 @@ class ProfileEdit  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       body: ProfileEditBody(),
     );
   }

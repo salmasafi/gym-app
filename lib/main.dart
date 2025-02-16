@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
 import 'package:gym_app/features/profile/presentation/screens/6.1profile.dart';
 //import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 
@@ -23,7 +24,8 @@ class MainApp extends StatelessWidget {
         return const MaterialApp(
         debugShowCheckedModeBanner: false,
         //home: MotivationScreen(),
-          home: SixdotOneProfileScreen(),
+         // home: SixdotOneProfileScreen(),
+          home: ProfileEdit(),
     );
     }
 
