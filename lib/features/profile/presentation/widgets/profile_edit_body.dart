@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-class Body extends StatelessWidget {
-  const Body({super.key});
+class ProfileEditBody extends StatelessWidget {
+  const ProfileEditBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class Body extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                width:double.infinity ,
+                width:393 ,
                 height: 289,
                 color: Color(0xffB3A0FF),
                 child: Column(
@@ -23,7 +22,7 @@ class Body extends StatelessWidget {
                       children: [
                         Icon(Icons.arrow_left),
                         Text("My Profile",style: TextStyle(
-                          fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white
+                            fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white
                         ),),
                       ],
                     ),
@@ -60,10 +59,10 @@ class Body extends StatelessWidget {
                               Text("75 Kg"), Text("Wieght"),
                             ],
                           ),
-                      SizedBox(width: 20,),
-                      Column(
-                        children: [
-                          Text("28"), Text("Years Old"),
+                          SizedBox(width: 20,),
+                          Column(
+                            children: [
+                              Text("28"), Text("Years Old"),
                             ],
                           ),
                           SizedBox(width: 20,),
@@ -80,30 +79,15 @@ class Body extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 30,),
+        /*SizedBox(height: 30,),
         buildMenuItem(Icons.person, "Profile"),
         buildMenuItem(Icons.star_rounded, "Favorite"),
         buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
         buildMenuItem(Icons.settings, "Settings"),
         buildMenuItem(Icons.phone_callback_sharp, "Help"),
-        buildMenuItem(Icons.exit_to_app_rounded, "Logout")
+        buildMenuItem(Icons.exit_to_app_rounded, "Logout")*/
 
       ],
     );
   }
-  Widget buildMenuItem(IconData icon, String text) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor:  Color(0xff896CFE),
-        child: Icon(icon, color: Colors.white, size:40,),
-      ),
-      title: Text(text, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight:FontWeight.w400),),
-      trailing: Icon(Icons.arrow_right, color: Colors.amberAccent,),
-      onTap: () {
-        // Handle menu tap
-      },
-    );
-  }
 }
-
-
