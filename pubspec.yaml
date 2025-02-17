@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -22,5 +23,13 @@ flutter:
        fonts:
          - asset: assets/fonts/Poppins-Bold.ttf
          - asset: assets/fonts/Poppins-Regular.ttf
+     - family: LeagueSpartan
+       fonts:
+         - asset: assets/fonts/LeagueSpartan.ttf
+         - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
+
   assets:
      - assets/images/
+     - assets/images/on_boarding_background_1.png
+     - assets/images/Rectangle.png
+     - assets/images/logo.png
