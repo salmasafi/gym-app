@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym_app/features/profile/presentation/screens/notification6.2.dart';
 import 'package:gym_app/setup_screen.dart';
 
+import 'features/set_up/presentation/screens/setup_screen.dart';
+
 void main() {
   runApp(const MainApp());
 }
