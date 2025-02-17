@@ -10,6 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   smooth_page_indicator: ^1.1.0
+  google_fonts: ^6.2.1
+  flutter_screenutil: ^5.9.3
+  numberpicker: ^2.1.2
+
 
 dev_dependencies:
   flutter_test:
