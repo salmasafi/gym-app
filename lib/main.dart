@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-//import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
-//import 'package:gym_app/features/profile/presentation/screens/6.1profile.dart';
+import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
+import 'package:gym_app/features/profile/presentation/screens/6.1profile.dart';
 //import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 
 //import 'package:gym_app/setup_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
+import 'package:gym_app/features/profile/presentation/screens/notification6.2.dart';
 import 'package:gym_app/setup_screen.dart';
 
 void main() {
@@ -22,11 +22,12 @@ class MainApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
        builder: (_, child){
-        return const MaterialApp(
+        return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MotivationScreen(),
          // home: SixdotOneProfileScreen(),
           //home: ProfileEdit(),
+          //home: NotificationScreenWorkout(),
     );
     }
 
