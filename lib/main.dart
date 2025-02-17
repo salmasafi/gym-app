@@ -24,10 +24,10 @@ class MainApp extends StatelessWidget {
        builder: (_, child){
         return MaterialApp(
         debugShowCheckedModeBanner: false,
-        //home: MotivationScreen(),
+        home: MotivationScreen(),
          // home: SixdotOneProfileScreen(),
           //home: ProfileEdit(),
-          home: NotificationScreenWorkout(),
+          //home: NotificationScreenWorkout(),
     );
     }
 
