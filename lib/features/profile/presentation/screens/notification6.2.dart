@@ -18,7 +18,7 @@ class _NotificationScreenWorkoutState extends State<NotificationScreenWorkout> {
 
   List<Map<String, String>> systemNotifications = [
     {"title": "You Started a New Challenge!", "time": "May 29 - 20XX", "icon": "flag"},
-    {"title": "System Update", "time": "May 28", "icon": "New House training ideas"},
+    {"title": "New House training ideas!", "time": "May 28", "icon": "New House training ideas"},
   ];
 
   IconData getIcon(String iconName) {
@@ -66,8 +66,8 @@ class _NotificationScreenWorkoutState extends State<NotificationScreenWorkout> {
                         child: Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: selectedTab == 0 ? Colors.greenAccent : Colors.grey[850],
-                            borderRadius: BorderRadius.circular(10),
+                            color: selectedTab == 0 ? Colors.yellow : Colors.grey[850],
+                            borderRadius: BorderRadius.circular(38),
                           ),
                           child: Center(
                             child: Text(
@@ -87,8 +87,8 @@ class _NotificationScreenWorkoutState extends State<NotificationScreenWorkout> {
                         child: Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: selectedTab == 1 ? Colors.greenAccent : Colors.grey[850],
-                            borderRadius: BorderRadius.circular(10),
+                            color: selectedTab == 1 ? Colors.yellow : Colors.grey[850],
+                            borderRadius: BorderRadius.circular(38),
                           ),
                           child: Center(
                             child: Text(
