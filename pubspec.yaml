@@ -27,4 +27,7 @@ flutter:
          - asset: assets/fonts/Poppins-Bold.ttf
          - asset: assets/fonts/Poppins-Regular.ttf
   assets:
-     - assets/images/
+    - assets/images/
+    - assets/icons/Arrow.png
+    - assets/icons/Vector.png
+    - assets/icons/ResourcesSwitch.png
