@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NotificationScreenWorkout extends StatefulWidget {
+  const NotificationScreenWorkout({super.key});
+
   @override
   _NotificationScreenWorkoutState createState() => _NotificationScreenWorkoutState();
 }

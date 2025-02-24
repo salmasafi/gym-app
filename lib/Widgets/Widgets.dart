@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/core/utils/colors.dart';
 
 class SignUp_Icons extends StatelessWidget {
   const SignUp_Icons({
@@ -144,7 +143,7 @@ class Button extends StatelessWidget {
       style: OutlinedButton.styleFrom(
         minimumSize: Size(Screenheight * 0.25, Screenheight * 0.05),
         shadowColor: Color(0x00000040),
-        backgroundColor: Color(0xFFFFFFF).withOpacity(0.09),
+        backgroundColor: Color(0x0fffffff).withOpacity(0.09),
       ),
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(

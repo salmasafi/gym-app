@@ -4,6 +4,8 @@ import 'package:gym_app/core/widgets/custom_button.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class WeightSelectionScreen extends StatefulWidget {
+  const WeightSelectionScreen({super.key});
+
   @override
   _WeightSelectionScreenState createState() => _WeightSelectionScreenState();
 }

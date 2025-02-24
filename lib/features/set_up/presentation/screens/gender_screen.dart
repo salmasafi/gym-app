@@ -130,7 +130,7 @@ class GenderOption extends StatelessWidget {
   final bool isSelected;
   final Color iconColor;
 
-  const GenderOption({
+  const GenderOption({super.key, 
     required this.icon,
     required this.label,
     required this.isSelected,
