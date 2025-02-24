@@ -33,7 +33,12 @@ flutter:
          - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
 
   assets:
+
      - assets/images/
      - assets/images/on_boarding_background_1.png
      - assets/images/Rectangle.png
      - assets/images/logo.png
+     - assets/icons/Arrow.png
+     - assets/icons/Vector.png
+     - assets/icons/ResourcesSwitch.png
+

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
 
 //import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
-
+import 'package:gym_app/features/setting/presentation/screens/6.1.3A_setting.dart';
 //import 'package:gym_app/setup_screen.dart';
 
 void main() {
