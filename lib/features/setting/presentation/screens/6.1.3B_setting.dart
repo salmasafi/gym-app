@@ -27,7 +27,6 @@ class _BsettingState extends State<Bsetting> {
     'Reminders',
   ];
 
-  
   final Map<String, bool> switchValues = {
     'General Notifications': false,
     'Sound': false,
@@ -39,6 +38,9 @@ class _BsettingState extends State<Bsetting> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: AppColors.blackColor,
       appBar: AppBar(
@@ -56,12 +58,15 @@ class _BsettingState extends State<Bsetting> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth * 0.05, 
+                vertical: screenHeight * 0.02, 
+              ),
               itemCount: settings.length,
               itemBuilder: (context, index) {
                 String setting = settings[index];
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: screenHeight * 0.02), 
                   child: ListTile(
                     title: Text(setting, style: textStyle),
                     trailing: Switch(
@@ -71,8 +76,8 @@ class _BsettingState extends State<Bsetting> {
                           switchValues[setting] = newValue;
                         });
                       },
-                      activeColor: AppColors.secondaryColor,
-                       inactiveTrackColor: AppColors.purple, 
+                      activeColor: AppColors.purple,
+                      inactiveTrackColor: AppColors.secondaryColor,
                       inactiveThumbColor: Colors.white,
                     ),
                   ),
@@ -80,7 +85,7 @@ class _BsettingState extends State<Bsetting> {
               },
             ),
           ),
-          NavBar(screenHeight: MediaQuery.of(context).size.height),
+          NavBar(screenHeight: screenHeight),
         ],
       ),
     );
