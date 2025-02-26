@@ -42,10 +42,10 @@ class ProfileEditBody extends StatelessWidget {
                             ),
                             Container(
 
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.yellow,
-                              ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.yellow,
+                                ),
                                 child: IconButton(onPressed: (){}, icon: Icon(Icons.mode_edit_outlined,size: 20, color: Colors.black87,)))
                           ],
                         ),
@@ -63,7 +63,7 @@ class ProfileEditBody extends StatelessWidget {
                       width: 323,
                       height: 60,
                       decoration: BoxDecoration(
-      
+
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Card(
@@ -112,9 +112,9 @@ class ProfileEditBody extends StatelessWidget {
           profileField("Weight", "50kg"),
           profileField("Height", "155"),
           ElevatedButton(
-              onPressed: (){},
-              style:ElevatedButton.styleFrom(backgroundColor: Colors.yellow,),
-              child: Text("Update Profile", style: TextStyle(color: Colors.black87),), )
+            onPressed: (){},
+            style:ElevatedButton.styleFrom(backgroundColor: Colors.yellow,),
+            child: Text("Update Profile", style: TextStyle(color: Colors.black87),), )
 
         ],
       ),

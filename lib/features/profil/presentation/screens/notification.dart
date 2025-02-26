@@ -148,10 +148,10 @@ class _NotificationScreenWorkoutState extends State<NotificationScreenWorkout> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
         child: ListTile(
           leading: Container(
-            decoration: BoxDecoration(
-              color:Colors.blue ,
-              borderRadius: BorderRadius.circular(50),
-            ),
+              decoration: BoxDecoration(
+                color:Colors.blue ,
+                borderRadius: BorderRadius.circular(50),
+              ),
               child: Icon(getIcon(data["icon"]!), color: Colors.yellow,size: 45,)),
           title: Text(data["title"]!,
               style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold)),
