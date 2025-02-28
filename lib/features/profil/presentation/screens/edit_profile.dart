@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/features/profile/presentation/widgets/profile_edit_body.dart';
+import 'package:gym_app/features/profil/presentation/widgets/profile_edit_body.dart';
+
 
 class ProfileEdit  extends StatelessWidget {
   const ProfileEdit ({super.key});

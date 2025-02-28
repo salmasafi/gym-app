@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
                       children: [
                         Icon(Icons.arrow_left),
                         Text("My Profile",style: TextStyle(
-                          fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white
+                            fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white
                         ),),
                       ],
                     ),
@@ -60,10 +60,10 @@ class Body extends StatelessWidget {
                               Text("75 Kg"), Text("Wieght"),
                             ],
                           ),
-                      SizedBox(width: 20,),
-                      Column(
-                        children: [
-                          Text("28"), Text("Years Old"),
+                          SizedBox(width: 20,),
+                          Column(
+                            children: [
+                              Text("28"), Text("Years Old"),
                             ],
                           ),
                           SizedBox(width: 20,),
