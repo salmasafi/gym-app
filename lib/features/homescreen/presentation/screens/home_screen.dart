@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/features/homescreen/presentation/widgets/article_card.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/build_header.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/recommindatin_card.dart';
 
@@ -40,7 +41,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
 
   Widget _buildCategoryButtons() {
     return Row(
@@ -84,7 +84,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-
   Widget _buildWeeklyChallenge() {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -107,7 +106,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.network("https://source.unsplash.com/100x100/?plank", width: 100, height: 80, fit: BoxFit.cover),
+            child: Image.asset("assets/images/home2.jpg", width: 100, height: 80, fit: BoxFit.cover),
           ),
         ],
       ),
@@ -125,33 +124,12 @@ class HomeScreen extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              _articleCard("Supplement Guide", "https://source.unsplash.com/200x200/?supplements"),
-              _articleCard("Quick & Effective Routines", "https://source.unsplash.com/200x200/?workout"),
+              article_card(title: "Supplement Guide", imageUrl: "assets/images/home2.jpg"),
+              article_card(title: "Quick & Effective Routines", imageUrl: "assets/images/home2.jpg"),
             ],
           ),
         )
       ],
-    );
-  }
-
-  Widget _articleCard(String title, String imageUrl) {
-    return Container(
-      width: 160,
-      margin: const EdgeInsets.only(right: 12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.cover),
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            bottom: 10,
-            left: 10,
-            child: Text(title,
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-          ),
-        ],
-      ),
     );
   }
 

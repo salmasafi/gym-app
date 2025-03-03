@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-
-class recommindation_card extends StatelessWidget {
-  const recommindation_card({
+class article_card extends StatelessWidget {
+  const article_card({
     super.key,
     required this.title,
-    required this.duration,
-    required this.kcal,
     required this.imageUrl,
   });
 
   final String title;
-  final String duration;
-  final String kcal;
   final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 160,
       margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -28,15 +23,9 @@ class recommindation_card extends StatelessWidget {
           Positioned(
             bottom: 10,
             left: 10,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                Text("$duration • $kcal",
-                    style: const TextStyle(color: Colors.white70, fontSize: 12)),
-              ],
-            ),
-          )
+            child: Text(title,
+                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          ),
         ],
       ),
     );
