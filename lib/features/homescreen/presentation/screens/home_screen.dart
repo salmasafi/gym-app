@@ -3,6 +3,7 @@ import 'package:gym_app/features/homescreen/presentation/widgets/article_card.da
 import 'package:gym_app/features/homescreen/presentation/widgets/build_header.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/category_item.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/recommindatin_card.dart';
+import 'package:gym_app/features/homescreen/presentation/widgets/weekly_chalenge_card.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -21,23 +22,28 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(35.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 40),
-              build_header(),
-              const SizedBox(height: 20),
-              _buildCategoryButtons(),
-              const SizedBox(height: 20),
-              _buildRecommendations(),
-              const SizedBox(height: 20),
-              _buildWeeklyChallenge(),
-              const SizedBox(height: 20),
-              _buildArticlesAndTips(),
-            ],
-          ),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(35.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 40),
+                  build_header(),
+                  const SizedBox(height: 20),
+                  _buildCategoryButtons(),
+                  const SizedBox(height: 20),
+                  _buildRecommendations(),
+                  const SizedBox(height: 20),
+                  WeeklyChallengeCard(),
+                  //_buildWeeklyChallenge(),
+                  const SizedBox(height: 20),
+                  _buildArticlesAndTips(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -76,11 +82,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildWeeklyChallenge() {
+  /*Widget _buildWeeklyChallenge() {
     return Container(
+      width: 393,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.purple,
+        color: Color(0xffB3A0FF),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -103,7 +110,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
-  }
+  }*/
 
   Widget _buildArticlesAndTips() {
     return Column(
