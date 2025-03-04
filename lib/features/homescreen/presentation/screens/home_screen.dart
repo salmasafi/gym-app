@@ -37,7 +37,6 @@ class HomeScreen extends StatelessWidget {
                   _buildRecommendations(),
                   const SizedBox(height: 20),
                   WeeklyChallengeCard(),
-                  //_buildWeeklyChallenge(),
                   const SizedBox(height: 20),
                   _buildArticlesAndTips(),
                 ],
@@ -82,37 +81,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  /*Widget _buildWeeklyChallenge() {
-    return Container(
-      width: 393,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Color(0xffB3A0FF),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text("Weekly Challenge",
-                    style: TextStyle(color: Colors.yellow, fontSize: 16, fontWeight: FontWeight.bold)),
-                Text("Plank With Hip Twist",
-                    style: TextStyle(color: Colors.white, fontSize: 14)),
-              ],
-            ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset("assets/images/home2.jpg", width: 100, height: 80, fit: BoxFit.cover),
-          ),
-        ],
-      ),
-    );
-  }*/
-
-  Widget _buildArticlesAndTips() {
+ Widget _buildArticlesAndTips() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
