@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/article_card.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/build_header.dart';
+import 'package:gym_app/features/homescreen/presentation/widgets/category_item.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/recommindatin_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(35.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -46,37 +47,28 @@ class HomeScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _categoryItem("Workout", Icons.fitness_center),
-        _categoryItem("Progress", Icons.bar_chart),
-        _categoryItem("Nutrition", Icons.restaurant),
-        _categoryItem("Community", Icons.group),
+        category_item(title: "Workout", icon: Icons.fitness_center),
+        category_item(title: "Progress", icon: Icons.bar_chart),
+        category_item(title: "Nutrition", icon: Icons.restaurant),
+        category_item(title: "Community", icon: Icons.group),
       ],
     );
   }
 
-  Widget _categoryItem(String title, IconData icon) {
-    return Column(
-      children: [
-        Icon(icon, color: Colors.green, size: 30),
-        const SizedBox(height: 4),
-        Text(title, style: const TextStyle(color: Colors.white, fontSize: 12)),
-      ],
-    );
-  }
 
   Widget _buildRecommendations() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _sectionHeader("Recommendations"),
+        sectionHeader("Recommendations"),
         const SizedBox(height: 10),
         SizedBox(
           height: 120,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              recommindation_card(title: "Squat Exercise", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/women.jpg"),
-              recommindation_card(title: "Full Body Stretching", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/home2.jpg"),
+              recommindation_card(title: "  Squat Exercise", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/women.jpg"),
+              recommindation_card(title: "  Full Body Stretching", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/home2.jpg"),
             ],
           ),
         )
@@ -117,7 +109,7 @@ class HomeScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _sectionHeader("Articles & Tips"),
+        sectionHeader("Articles & Tips"),
         const SizedBox(height: 10),
         SizedBox(
           height: 120,
@@ -133,13 +125,24 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _sectionHeader(String title) {
+  Widget sectionHeader(String title) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
             style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
-        const Text("See All", style: TextStyle(color: Colors.blue, fontSize: 14)),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              const Text(
+                'See All',
+                style: TextStyle(color: Colors.white),
+              ),
+              Icon(Icons.arrow_right, color:Color(0xffE2F163))
+            ],
+          ),
+        )
       ],
     );
   }
