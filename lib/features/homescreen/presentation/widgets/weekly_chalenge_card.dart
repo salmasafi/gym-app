@@ -73,7 +73,7 @@ class WeeklyChallengeCard extends StatelessWidget {
             /// Image Section
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset("assets/images/home2.jpg",
+              child: Image.asset("assets/images/weeklychalleng.jpg",
                 height: double.infinity,
                 width: 175,
                 fit: BoxFit.cover,

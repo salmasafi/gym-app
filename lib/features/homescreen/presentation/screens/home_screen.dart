@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/article_card.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/build_header.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/category_item.dart';
+import 'package:gym_app/features/homescreen/presentation/widgets/navigation_item.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/recommindatin_card.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/weekly_chalenge_card.dart';
 
@@ -10,16 +11,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.purple,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white54,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-        ],
+      bottomNavigationBar:  Container(
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Color(0xFFD0A8FF), // Light purple color
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            navigation_item(icon: Icons.home, index: 0),
+            navigation_item(icon: Icons.article, index: 1),
+            navigation_item(icon: Icons.star, index: 2),
+            navigation_item(icon: Icons.support_agent, index: 3),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -37,8 +46,9 @@ class HomeScreen extends StatelessWidget {
                   _buildRecommendations(),
                   const SizedBox(height: 20),
                   WeeklyChallengeCard(),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 8),
                   _buildArticlesAndTips(),
+
                 ],
               ),
             ),
@@ -47,6 +57,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
 
   Widget _buildCategoryButtons() {
     return Row(
@@ -86,14 +97,14 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         sectionHeader("Articles & Tips"),
-        const SizedBox(height: 10),
+
         SizedBox(
-          height: 120,
+          height: 175,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              article_card(title: "Supplement Guide", imageUrl: "assets/images/home2.jpg"),
-              article_card(title: "Quick & Effective Routines", imageUrl: "assets/images/home2.jpg"),
+              article_card(title: "Supplement Guide", imageUrl: "assets/images/article1.jpg"),
+              article_card(title: "Quick & Effective Routines", imageUrl: "assets/images/article2.jpg"),
             ],
           ),
         )
@@ -106,7 +117,7 @@ class HomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
-            style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+            style: const TextStyle(color: Color(0xffE2F163), fontSize: 15, fontWeight: FontWeight.w500 ,fontFamily: "Poppins" )),
         TextButton(
           onPressed: () {},
           child: Row(
@@ -123,3 +134,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
