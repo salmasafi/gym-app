@@ -2,6 +2,7 @@ C/C++ Structured LogO
 M
 KC:\src\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
+<<<<<<< HEAD
 ?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	Ã’æÆÖ2§ ÃÔ„ŒÐ2]
 [
 YD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\additional_project_files.txt	Ã’æÆÖ2 „Ü’—Ö2Z
@@ -26,3 +27,29 @@ Q
 OD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\prefab_config.json	Ã’æÆÖ2( •Ü’—Ö2X
 V
 TD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\symbol_folder_index.txt	Ã’æÆÖ2K •Ü’—Ö2
+=======
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	Ý¥í¾×2§ ÃÔ„ŒÐ2]
+[
+YD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\additional_project_files.txt	Ý¥í¾×2 „Ü’—Ö2Z
+X
+VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build.json	Ý¥í¾×2™ ŽÜ’—Ö2_
+]
+[D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build_mini.json	Ý¥í¾×2ð ’Ü’—Ö2L
+J
+HD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja	Ý¥í¾×2ïÖ ÚÙ’—Ö2P
+N
+LD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja.txt	Ý¥í¾×2U
+S
+QD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build_file_index.txt	Ý¥í¾×2K –Ü’—Ö2V
+T
+RD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json	Þ¥í¾×2	Z
+X
+VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json.bin	Þ¥í¾×2
+`
+^
+\D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\metadata_generation_command.txt	Þ¥í¾×2› ”Ü’—Ö2S
+Q
+OD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\prefab_config.json	Þ¥í¾×2( •Ü’—Ö2X
+V
+TD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\symbol_folder_index.txt	Þ¥í¾×2K •Ü’—Ö2
+>>>>>>> yasmeena

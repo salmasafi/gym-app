@@ -14,7 +14,7 @@ class category_item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, color: Colors.green, size: 32),
+        Icon(icon, color: Color(0xffB3A0FF), size: 32),
         const SizedBox(height: 4),
         Text(title, style: const TextStyle(color: Colors.white, fontSize: 12)),
       ],
