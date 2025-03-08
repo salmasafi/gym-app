@@ -13,16 +13,18 @@ class build_header extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text("Hi, Madison",
-                style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
+                style: TextStyle(color: Color(0xff896CFE), fontSize: 20, fontWeight: FontWeight.bold)),
             Text("It's time to challenge your limits.",
-                style: TextStyle(color: Colors.white54, fontSize: 14)),
+                style: TextStyle(color: Colors.white, fontSize: 13)),
           ],
         ),
         Row(
           children: const [
-            Icon(Icons.search, color: Colors.white),
+            Icon(Icons.search, color: Color(0xff896CFE)),
             SizedBox(width: 16),
-            Icon(Icons.notifications, color: Colors.white),
+            Icon(Icons.notifications, color: Color(0xff896CFE)),
+            SizedBox(width: 16),
+            Icon(Icons.person, color: Color(0xff896CFE)),
           ],
         )
       ],

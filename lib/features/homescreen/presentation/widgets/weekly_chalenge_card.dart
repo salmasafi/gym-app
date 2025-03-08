@@ -5,82 +5,73 @@ class WeeklyChallengeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 393,
-      height: 181,
-      padding: const EdgeInsets.all(12),
+      width: 324,
+      height: 125,
       decoration: BoxDecoration(
-        color: Colors.purple.shade200,
-        borderRadius: BorderRadius.circular(16),
+        color: Color(0xff212020),
+        borderRadius: BorderRadius.circular(20),
       ),
-      child: Container(
-        width: 324,
-        height: 125,
-        decoration: BoxDecoration(
-          color: Color(0xff212020),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          children: [
-            /// Text Section
-            Expanded(
-              child: Stack(
-                children: [
-                  /// Main Title & Subtitle
-                  Positioned(
-                    top:40,
-                    left: 10,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Weekly',
-                          style: TextStyle(
-                            color: Color(0xffE2F163),
-                            fontFamily:"Poppins" ,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2,
-                          ),
+      child: Row(
+        children: [
+          /// Text Section
+          Expanded(
+            child: Stack(
+              children: [
+                /// Main Title & Subtitle
+                Positioned(
+                  top:40,
+                  left: 10,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Weekly',
+                        style: TextStyle(
+                          color: Color(0xffE2F163),
+                          fontFamily:"Poppins" ,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2,
                         ),
-                        Text(
-                          'Challenge',
-                          style: TextStyle(
-                            color: Color(0xffE2F163),
-                            fontFamily:"Poppins" ,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2,
-                          ),
+                      ),
+                      Text(
+                        'Challenge',
+                        style: TextStyle(
+                          color: Color(0xffE2F163),
+                          fontFamily:"Poppins" ,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2,
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Plank with a Twist',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Plank with a Twist',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                ),
 
-                  /// Blue Label
+                /// Blue Label
 
-                ],
-              ),
+              ],
             ),
+          ),
 
-            /// Image Section
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset("assets/images/weeklychalleng.jpg",
-                height: double.infinity,
-                width: 175,
-                fit: BoxFit.cover,
-              ),
+          /// Image Section
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset("assets/images/weeklychalleng.jpg",
+              height: double.infinity,
+              width: 175,
+              fit: BoxFit.cover,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

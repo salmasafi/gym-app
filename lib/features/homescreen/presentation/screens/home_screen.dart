@@ -14,6 +14,69 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar:  Container(
         height: 60,
         decoration: const BoxDecoration(
+          color: Color(0xffB3A0FF), // Light purple color
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            navigation_item(icon: Icons.home, index: 0),
+            navigation_item(icon: Icons.article, index: 1),
+            navigation_item(icon: Icons.star_rounded, index: 2),
+            navigation_item(icon: Icons.support_agent, index: 3),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Positioned(
+              top:386 ,
+                child: Container(
+                  height:181,
+                  width: 393,
+                  decoration: BoxDecoration(
+                    color: Color(0xffB3A0FF)
+                  ),
+                )
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 61),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  build_header(),
+                  const SizedBox(height: 18),
+                  _buildCategoryButtons(),
+                  const SizedBox(height: 20),
+                  _buildRecommendations(),
+                  const SizedBox(height: 45),
+                  //WeeklyChallengeCard(),
+                  //const SizedBox(height: 8),
+                  //_buildArticlesAndTips(),
+                  Positioned(
+                    top: 413,
+                    child: WeeklyChallengeCard(),),
+                  const SizedBox(height: 20),
+                  Positioned(
+                    top: 611,
+                    child: _buildArticlesAndTips(),)
+
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+    /*Scaffold(
+      backgroundColor: Colors.black,
+      bottomNavigationBar:  Container(
+        height: 60,
+        decoration: const BoxDecoration(
           color: Color(0xFFD0A8FF), // Light purple color
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
@@ -55,7 +118,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    );*/
   }
 
 
@@ -77,7 +140,7 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         sectionHeader("Recommendations"),
-        const SizedBox(height: 10),
+        //const SizedBox(height: 10),
         SizedBox(
           height: 120,
           child: ListView(
