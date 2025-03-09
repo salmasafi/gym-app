@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_B.dart';
 import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/A_3.1_Forgotten_Password.dart';
 import 'package:gym_app/Widgets/Widgets.dart';
+import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 
 // this is the log in screen
 class Login_3_A extends StatelessWidget {
@@ -108,7 +109,7 @@ class Login_3_A extends StatelessWidget {
             Button(
                 Screenheight: Screenheight,
                 NameButton: "Log In",
-                Location: Login_3_B()),
+                Location: MotivationScreen()),
             SizedBox(height: Screenheight * 0.04),
             Text(
               "or sign up with",

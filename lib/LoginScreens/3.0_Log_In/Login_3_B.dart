@@ -59,8 +59,7 @@ class Login_3_B extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Color(0xFFB3A0FF),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
                 children: [
                   Name_For_TextField(
                       Name: "Fullname", ScreenWidth: ScreenWidth),

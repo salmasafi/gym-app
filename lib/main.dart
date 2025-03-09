@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym_app/core/Logic/cubit/startbutton_cubit.dart';
+import 'package:gym_app/features/set_up/presentation/screens/sc_405.dart';
+import 'package:gym_app/features/set_up/presentation/screens/sc_406.dart';
+import 'package:gym_app/features/set_up/presentation/screens/sc_408.dart';
 
 //import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 //import 'package:gym_app/setup_screen.dart';
@@ -13,12 +18,18 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen1(),
-      // home: SixdotOneProfileScreen(),
-      //home: ProfileEdit(),
-      //home: NotificationScreenWorkout(),
+    return BlocProvider(
+      create: (context) => StartbuttonCubit(),
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Sc405(),
+          // home: SixdotOneProfileScreen(),
+          //home: ProfileEdit(),
+          //home: NotificationScreenWorkout(),
+        ),
+      ),
     );
   }
 }

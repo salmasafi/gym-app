@@ -47,7 +47,7 @@ class _Sc401State extends State<Sc405> {
               height: 40.h,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.r),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: TextStyle(
