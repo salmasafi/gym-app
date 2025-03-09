@@ -1,0 +1,2 @@
+D:/New folder/gym-app/android/app/.cxx/Debug/i3f2w294/x86_64/CMakeFiles/edit_cache.dir
+D:/New folder/gym-app/android/app/.cxx/Debug/i3f2w294/x86_64/CMakeFiles/rebuild_cache.dir

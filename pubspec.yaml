@@ -9,13 +9,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  smooth_page_indicator: ^1.1.0
+  smooth_page_indicator: ^1.2.1
   google_fonts: ^6.2.1
   flutter_screenutil: ^5.9.3
   numberpicker: ^2.1.2
   dio: ^5.8.0+1
   flutter_bloc: ^9.0.0
+<<<<<<< HEAD
   image_picker: ^1.1.2
+=======
+>>>>>>> 2199e6c14a5c7e44f255798e373712280c48e7a5
 
 
 dev_dependencies:
