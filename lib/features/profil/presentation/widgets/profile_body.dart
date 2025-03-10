@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -86,12 +87,12 @@ class Body extends StatelessWidget {
         buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
         buildMenuItem(Icons.settings, "Settings"),
         buildMenuItem(Icons.phone_callback_sharp, "Help"),
-        buildMenuItem(Icons.exit_to_app_rounded, "Logout")
+        buildMenuItem(Icons.exit_to_app_rounded, "Logout",onTap: () => _showLogoutDialog(context))
 
       ],
     );
   }
-  Widget buildMenuItem(IconData icon, String text) {
+  Widget buildMenuItem(IconData icon, String text, {VoidCallback? onTap}) {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor:  Color(0xff896CFE),
@@ -99,11 +100,61 @@ class Body extends StatelessWidget {
       ),
       title: Text(text, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight:FontWeight.w400),),
       trailing: Icon(Icons.arrow_right, color: Colors.amberAccent,),
-      onTap: () {
-        // Handle menu tap
+      onTap: onTap,
+    );
+  }
+
+
+  void _showLogoutDialog(BuildContext context) {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: '',
+      pageBuilder: (context, animation1, animation2) {
+        return Align(
+          alignment: Alignment.bottomCenter, // Moves dialog towards the bottom
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              margin: EdgeInsets.all(20),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Color(0xffB3A0FF),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              width: double.infinity,
+              height: 227,
+              child: Column(
+                mainAxisSize: MainAxisSize.min, // Makes it compact
+                children: [
+                  Text("Are you sure you want to log out?", textAlign: TextAlign.center),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: Text("Cancel", style: TextStyle(color: Color(0xff896CFE), fontSize: 20)),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.yellow),
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: Text("Yes, logout", style: TextStyle(color: Colors.black)),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
       },
     );
   }
+
 }
-
-
