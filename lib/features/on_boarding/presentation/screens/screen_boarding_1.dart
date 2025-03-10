@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
+import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -152,6 +152,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () {
                             if (_currentIndex == _onboardingData.length - 1) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login_3_A()),
+                              );
                             } else {
                               _controller.nextPage(
                                 duration: Duration(milliseconds: 300),

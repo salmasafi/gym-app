@@ -7,8 +7,8 @@ plugins {
 
 android {
     namespace = "com.example.gym_app"
-    compileSdk = 33
-    ndkVersion = 33
+    compileSdk = 34
+    ndkVersion = "23.2.8568313"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

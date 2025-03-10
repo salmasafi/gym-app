@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym_app/core/utils/colors.dart';
+import 'package:gym_app/features/Logic/service/API/APIservices.dart';
+import 'package:gym_app/features/Logic/service/API/BMI_Endpoint.dart';
 import 'package:gym_app/features/set_up/presentation/widgets/textfield.dart';
 
 class Sc408 extends StatelessWidget {
@@ -30,7 +32,7 @@ class Sc408 extends StatelessWidget {
           children: [
             Column(
               children: [
-                 SizedBox(height: 10.h),
+                SizedBox(height: 10.h),
                 Text(
                   "Fill Your Profile",
                   style: TextStyle(
@@ -40,8 +42,8 @@ class Sc408 extends StatelessWidget {
                     color: AppColors.whiteColor,
                   ),
                 ),
-                 SizedBox(height: 25.h),
-                 Padding(
+                SizedBox(height: 25.h),
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.dm),
                   child: Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -64,7 +66,7 @@ class Sc408 extends StatelessWidget {
               child: Center(
                 child: Stack(
                   children: [
-                     CircleAvatar(
+                    CircleAvatar(
                       radius: 50.dm,
                       backgroundImage: AssetImage('assets/images/girl.png'),
                     ),
@@ -77,7 +79,7 @@ class Sc408 extends StatelessWidget {
                           color: Colors.yellow,
                           border: Border.all(color: Colors.black, width: 2),
                         ),
-                        padding:  EdgeInsets.all(5.dm),
+                        padding: EdgeInsets.all(5.dm),
                         child: const Icon(
                           Icons.edit,
                           size: 15,
@@ -90,10 +92,10 @@ class Sc408 extends StatelessWidget {
               ),
             ),
 
-             SizedBox(height: 20.h),
+            SizedBox(height: 20.h),
 
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 20.dm),
+              padding: EdgeInsets.symmetric(horizontal: 20.dm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -105,7 +107,7 @@ class Sc408 extends StatelessWidget {
               ),
             ),
 
-             SizedBox(height: 30.h),
+            SizedBox(height: 30.h),
 
             // Start Button
             SizedBox(
@@ -118,20 +120,41 @@ class Sc408 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                onPressed: () {},
-                child:  Text(
+                onPressed: () {
+                  ApiService apiService = ApiService();
+
+                  BMI_Request bmiRequest = BMI_Request(
+                    weightvalue: "70",
+                    weightunit: "kg",
+                    heightvalue: "180",
+                    heightunit: "cm",
+                    sex: "Male",
+                    age: "25",
+                    waist: "80",
+                    hip: "90",
+                  );
+
+                  apiService.sendBMI(bmiRequest).then((response) {
+                    if (response != null) {
+                      print("✅ BMI API Response: $response");
+                    } else {
+                      print("❌ Failed to send BMI data");
+                    }
+                  });
+                },
+                child: Text(
                   "Start",
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
-                    color:AppColors.blackColor,
+                    color: AppColors.blackColor,
                   ),
                 ),
               ),
             ),
 
-             SizedBox(height: 30.h),
+            SizedBox(height: 30.h),
           ],
         ),
       ),

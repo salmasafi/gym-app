@@ -54,7 +54,7 @@ class _Sc406State extends State<Sc406> {
               height: 40.h,
             ),
             Padding(
-              padding:  EdgeInsets.all(8.0.dm),
+              padding: EdgeInsets.all(8.0.dm),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: TextStyle(
@@ -70,10 +70,11 @@ class _Sc406State extends State<Sc406> {
             ),
             Container(
               width: double.infinity,
-              height:  0.6.sh,
+              height: 0.6.sh,
               color: AppColors.primaryColor,
               child: Center(
-                child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
                       height: 30.h,
@@ -88,7 +89,7 @@ class _Sc406State extends State<Sc406> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding:  EdgeInsets.symmetric(horizontal: 10.dm),
+                            padding: EdgeInsets.symmetric(horizontal: 10.dm),
                             child: Text(
                               "Lose Weight",
                               style: TextStyle(
@@ -108,9 +109,8 @@ class _Sc406State extends State<Sc406> {
                           )
                         ],
                       ),
-                    ),SizedBox(height: 
-                    20.h) ,
-                   
+                    ),
+                    SizedBox(height: 20.h),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -121,7 +121,7 @@ class _Sc406State extends State<Sc406> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding:  EdgeInsets.symmetric(horizontal: 10.dm),
+                            padding: EdgeInsets.symmetric(horizontal: 10.dm),
                             child: Text(
                               "Gain Weight",
                               style: TextStyle(
@@ -155,7 +155,7 @@ class _Sc406State extends State<Sc406> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding:  EdgeInsets.symmetric(horizontal: 10.dm),
+                            padding: EdgeInsets.symmetric(horizontal: 10.dm),
                             child: Text(
                               "Muscle Mass Gain",
                               style: TextStyle(
@@ -189,7 +189,7 @@ class _Sc406State extends State<Sc406> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding:  EdgeInsets.symmetric(horizontal: 10.dm),
+                            padding: EdgeInsets.symmetric(horizontal: 10.dm),
                             child: Text(
                               "Shape Body",
                               style: TextStyle(
@@ -223,7 +223,7 @@ class _Sc406State extends State<Sc406> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding:  EdgeInsets.symmetric(horizontal: 10.dm),
+                            padding: EdgeInsets.symmetric(horizontal: 10.dm),
                             child: Text(
                               "Others",
                               style: TextStyle(
@@ -243,29 +243,36 @@ class _Sc406State extends State<Sc406> {
                           )
                         ],
                       ),
-                    ) ,
-                
+                    ),
                   ],
                 ),
               ),
-            ) , SizedBox(height: 10.h,) ,
-
-                 OutlinedButton(style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(AppColors.blackColor) , 
-              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.dm ,)))
             ),
+            SizedBox(
+              height: 10.h,
+            ),
+            OutlinedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        WidgetStatePropertyAll(AppColors.blackColor),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                      20.dm,
+                    )))),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Sc407(),)) ;
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Sc407(),
+                      ));
                 },
                 child: Text(
                   "Continue",
                   style: TextStyle(
                       fontFamily: "Poppins",
                       fontSize: 18.sp,
-                      fontWeight: FontWeight.w700 , 
+                      fontWeight: FontWeight.w700,
                       color: AppColors.whiteColor),
-                      
                 ))
           ],
         ),
