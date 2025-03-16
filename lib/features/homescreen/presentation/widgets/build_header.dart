@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/features/profil/presentation/screens/notification.dart';
+import 'package:gym_app/features/profil/presentation/screens/profile.dart';
+
 class build_header extends StatelessWidget {
   const build_header({
     super.key,
@@ -12,19 +15,45 @@ class build_header extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text("Hi, Madison",
-                style: TextStyle(color: Color(0xff896CFE), fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(
+              "Hi, Madison",
+              style: TextStyle(
+                  color: Color(0xff896CFE),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
             Text("It's time to challenge your limits.",
-                style: TextStyle(color: Colors.white, fontSize: 13)),
+                style: TextStyle(color: Colors.white, fontSize: 11)),
           ],
         ),
         Row(
-          children: const [
-            Icon(Icons.search, color: Color(0xff896CFE)),
-            SizedBox(width: 16),
-            Icon(Icons.notifications, color: Color(0xff896CFE)),
-            SizedBox(width: 16),
-            Icon(Icons.person, color: Color(0xff896CFE)),
+          children: [
+            IconButton(
+              icon: Icon(Icons.search, color: Color(0xff896CFE)),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.person, color: Color(0xff896CFE)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SixdotOneProfileScreen(),
+                  ),
+                );
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.notifications, color: Color(0xff896CFE)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationScreenWorkout(),
+                  ),
+                );
+              },
+            ),
           ],
         )
       ],

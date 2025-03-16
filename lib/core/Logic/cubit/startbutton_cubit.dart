@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
 import 'package:gym_app/core/Models/api_model.dart';
 import 'package:gym_app/core/Services/apiservices.dart';
+import 'package:gym_app/features/homescreen/presentation/screens/home_screen.dart';
 
 part 'startbutton_state.dart';
 
@@ -29,11 +30,13 @@ class StartbuttonCubit extends Cubit<StartbuttonState> {
           email, name, age, sex, image, weight, height, password, nickname);
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => Login_3_A(),
+          builder: (context) => HomeScreen(),
         ),
       );
       emit(StartbuttonInitial());
-    } catch (e) {}
+    } catch (e) {
+      print(e);
+    }
     emit(StartbuttonError());
   }
 }

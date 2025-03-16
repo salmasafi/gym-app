@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/core/widgets/custom_button.dart';
+import 'package:gym_app/features/set_up/presentation/screens/sc_405.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class WeightSelectionScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.blackColor,
         elevation: 0,
-       leading: IconButton(
+        leading: IconButton(
           padding: EdgeInsets.zero,
           alignment: Alignment.centerRight,
           icon: Image.asset('assets/icons/Arrow.png'),
@@ -32,11 +33,13 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           alignment: Alignment.centerLeft,
           child: Text(
             "Back",
-            style: TextStyle(color: AppColors.secondaryColor, fontSize: 16 , fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: AppColors.secondaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
           ),
         ),
-        ),
-      
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -52,7 +55,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           Container(
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color:AppColors.blackColor,
+              color: AppColors.blackColor,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
@@ -111,16 +114,13 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.purple.shade200,
-             
+              color: AppColors.primaryColor,
             ),
             padding: EdgeInsets.symmetric(vertical: 10),
             child: NumberPicker(
               value: _currentWeight,
               itemHeight: 50,
               itemCount: 6,
-             
-              
               minValue: 30,
               maxValue: 200,
               axis: Axis.horizontal,
@@ -153,13 +153,20 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           ),
           Spacer(),
           CustomButton(
-          buttonText: "Next",
-          onPress: () {},
-          width: 178,
-          height: 44,
-          buttonColor: Color(0xff373737),
-          borderRadius: 30,
-        ),
+            buttonText: "Next",
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Sc405(),
+                ),
+              );
+            },
+            width: 178,
+            height: 44,
+            buttonColor: Color(0xff373737),
+            borderRadius: 30,
+          ),
           SizedBox(height: 20),
         ],
       ),

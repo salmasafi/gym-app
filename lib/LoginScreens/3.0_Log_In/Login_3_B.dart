@@ -2,7 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
+import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/B_3.1_Set_Password.dart';
 import 'package:gym_app/Widgets/Widgets.dart';
+
+import '../Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
 
 // This is the Sign Up Screen
 class Login_3_B extends StatelessWidget {
@@ -54,12 +57,13 @@ class Login_3_B extends StatelessWidget {
             SizedBox(height: Screenheight * 0.05),
             Container(
               padding: EdgeInsets.symmetric(vertical: Screenheight * 0.02),
-              height: Screenheight * 0.37,
+              //height: Screenheight * 0.37,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0xFFB3A0FF),
               ),
-              child: ListView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Name_For_TextField(
                       Name: "Fullname", ScreenWidth: ScreenWidth),
@@ -138,7 +142,7 @@ class Login_3_B extends StatelessWidget {
             Button(
               Screenheight: Screenheight,
               NameButton: "Sign Up",
-              Location: Login_3_A(),
+              Location: setPassword(),
             ),
             SizedBox(height: Screenheight * 0.02),
             Text(
@@ -163,6 +167,14 @@ class Login_3_B extends StatelessWidget {
                 ),
                 SizedBox(width: ScreenWidth * 0.04),
                 SignUp_Icons(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => fingerPrint(),
+                      ),
+                    );
+                  },
                   Screenheight: Screenheight,
                   ScreenWidth: ScreenWidth,
                   Images: "Fingerprint Icon.png",

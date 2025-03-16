@@ -47,7 +47,7 @@ class _Sc401State extends State<Sc405> {
               height: 40.h,
             ),
             Padding(
-              padding:  EdgeInsets.all(8.0.r),
+              padding: EdgeInsets.all(8.0.r),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: TextStyle(
@@ -85,9 +85,9 @@ class _Sc401State extends State<Sc405> {
                             inactiveTrackColor: AppColors.primaryColor,
                             thumbColor: AppColors.secondaryColor,
                             overlayColor: AppColors.secondaryColor.withValues(),
-                            trackHeight: 20,
+                            trackHeight: 50,
                             thumbShape: const RoundSliderThumbShape(
-                                enabledThumbRadius: 5),
+                                enabledThumbRadius: 20),
                           ),
                           child: Slider(
                             min: 140,
@@ -109,25 +109,30 @@ class _Sc401State extends State<Sc405> {
             SizedBox(
               height: 40.h,
             ),
-            OutlinedButton(style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(AppColors.blackColor) , 
-              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20 ,)))
+            OutlinedButton(
+              style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                    20,
+                  )))),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Sc406(),
+                  ),
+                );
+              },
+              child: Text(
+                "Continue",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.whiteColor),
+              ),
             ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Sc406(),)) ;
-                },
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w700 , 
-                      color: AppColors.whiteColor),
-                      
-                ),),
-                  
-                
           ],
         ),
       ),

@@ -76,13 +76,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   const EdgeInsets.only(top: 65, left: 315),
                               child: GestureDetector(
                                 onTap: () {
-                                  _controller
-                                      .jumpToPage(_onboardingData.length - 1);
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) {
-                                      return Login_3_A();
-                                    },
-                                  ));
+                                  Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return Login_3_A();
+                                      },
+                                    ),
+                                    (route) => false,
+                                  );
                                 },
                                 child: Text(
                                   "Skip",
@@ -152,6 +154,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () {
                             if (_currentIndex == _onboardingData.length - 1) {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return Login_3_A();
+                                  },
+                                ),
+                                (route) => false,
+                              );
                             } else {
                               _controller.nextPage(
                                 duration: Duration(milliseconds: 300),
