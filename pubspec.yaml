@@ -15,7 +15,7 @@ dependencies:
   numberpicker: ^2.1.2
   dio: ^5.8.0+1
   flutter_bloc: ^9.0.0
-
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +35,6 @@ flutter:
          - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
 
   assets:
-
      - assets/images/
      - assets/images/on_boarding_background_1.png
      - assets/images/Rectangle.png

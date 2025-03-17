@@ -40,6 +40,7 @@ class _Sc406State extends State<Sc406> {
       backgroundColor: AppColors.blackColor,
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
@@ -49,9 +50,6 @@ class _Sc406State extends State<Sc406> {
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                   fontSize: 25.sp),
-            ),
-            SizedBox(
-              height: 40.h,
             ),
             Padding(
               padding: EdgeInsets.all(8.0.dm),
@@ -65,10 +63,8 @@ class _Sc406State extends State<Sc406> {
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(
-              height: 35.h,
-            ),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.h),
               width: double.infinity,
               height: 0.6.sh,
               color: AppColors.primaryColor,
@@ -76,9 +72,9 @@ class _Sc406State extends State<Sc406> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      height: 30.h,
-                    ),
+                    // SizedBox(
+                    //   height: 30.h,
+                    // ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -86,7 +82,7 @@ class _Sc406State extends State<Sc406> {
                         borderRadius: BorderRadius.circular(30.dm),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.dm),
@@ -95,9 +91,6 @@ class _Sc406State extends State<Sc406> {
                               style: TextStyle(
                                   fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          SizedBox(
-                            width: 60.w,
                           ),
                           Checkbox(
                             value: lose,
@@ -110,7 +103,11 @@ class _Sc406State extends State<Sc406> {
                         ],
                       ),
                     ),
+<<<<<<< HEAD
                     SizedBox(height: 20.h),
+=======
+
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -118,7 +115,7 @@ class _Sc406State extends State<Sc406> {
                         borderRadius: BorderRadius.circular(30.dm),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.dm),
@@ -127,9 +124,6 @@ class _Sc406State extends State<Sc406> {
                               style: TextStyle(
                                   fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          SizedBox(
-                            width: 60.w,
                           ),
                           Checkbox(
                             value: gain,
@@ -142,9 +136,7 @@ class _Sc406State extends State<Sc406> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -152,7 +144,7 @@ class _Sc406State extends State<Sc406> {
                         borderRadius: BorderRadius.circular(30.dm),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.dm),
@@ -161,9 +153,6 @@ class _Sc406State extends State<Sc406> {
                               style: TextStyle(
                                   fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          SizedBox(
-                            width: 60.w,
                           ),
                           Checkbox(
                             value: muscle,
@@ -176,9 +165,7 @@ class _Sc406State extends State<Sc406> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -186,7 +173,7 @@ class _Sc406State extends State<Sc406> {
                         borderRadius: BorderRadius.circular(30.dm),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.dm),
@@ -195,9 +182,6 @@ class _Sc406State extends State<Sc406> {
                               style: TextStyle(
                                   fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          SizedBox(
-                            width: 60.w,
                           ),
                           Checkbox(
                             value: shape,
@@ -210,9 +194,6 @@ class _Sc406State extends State<Sc406> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -220,7 +201,7 @@ class _Sc406State extends State<Sc406> {
                         borderRadius: BorderRadius.circular(30.dm),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10.dm),
@@ -229,9 +210,6 @@ class _Sc406State extends State<Sc406> {
                               style: TextStyle(
                                   fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
-                          ),
-                          SizedBox(
-                            width: 60.w,
                           ),
                           Checkbox(
                             value: other,
@@ -248,6 +226,7 @@ class _Sc406State extends State<Sc406> {
                 ),
               ),
             ),
+<<<<<<< HEAD
             SizedBox(
               height: 10.h,
             ),
@@ -274,6 +253,36 @@ class _Sc406State extends State<Sc406> {
                       fontWeight: FontWeight.w700,
                       color: AppColors.whiteColor),
                 ))
+=======
+            OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      20.dm,
+                    ),
+                  ),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Sc407(),
+                    ));
+              },
+              child: Text(
+                "Continue",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.whiteColor),
+              ),
+            ),
+            SizedBox(height: 15.h,),
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
           ],
         ),
       ),

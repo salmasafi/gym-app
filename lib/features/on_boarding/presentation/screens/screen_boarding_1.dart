@@ -76,13 +76,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   const EdgeInsets.only(top: 65, left: 315),
                               child: GestureDetector(
                                 onTap: () {
-                                  _controller
-                                      .jumpToPage(_onboardingData.length - 1);
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) {
-                                      return Login_3_A();
-                                    },
-                                  ));
+                                  Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return Login_3_A();
+                                      },
+                                    ),
+                                    (route) => false,
+                                  );
                                 },
                                 child: Text(
                                   "Skip",
@@ -152,10 +154,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () {
                             if (_currentIndex == _onboardingData.length - 1) {
+<<<<<<< HEAD
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Login_3_A()),
+=======
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return Login_3_A();
+                                  },
+                                ),
+                                (route) => false,
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                               );
                             } else {
                               _controller.nextPage(

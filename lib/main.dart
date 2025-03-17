@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+<<<<<<< HEAD
 import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
+=======
+import 'package:gym_app/core/Logic/cubit/startbutton_cubit.dart';
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
 import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
-//import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
-//import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
-
-//import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
-//import 'package:gym_app/setup_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +31,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -46,5 +46,17 @@ class MainApp extends StatelessWidget {
         //home: NotificationScreenWorkout(),
       ),
     );
+=======
+    return BlocProvider(
+      create: (context) => StartbuttonCubit(),
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: OnBoardingScreen1(),
+        ),
+      ),
+      );
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
   }
 }
