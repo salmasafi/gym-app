@@ -7,6 +7,7 @@ import 'package:gym_app/core/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/core/Widgets_Login/sign_up__icons.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields__passwords.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 // This is the Sign Up Screen
 class Login_3_B extends StatelessWidget {
@@ -18,10 +19,10 @@ class Login_3_B extends StatelessWidget {
     double Screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.backgroundColors,
       appBar: AppBar(
-        backgroundColor: Color(0xFF232323),
-        foregroundColor: Color(0xFFE2F163),
+        backgroundColor: AppColors.backgroundColors,
+        foregroundColor: AppColors.buttonandIConColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -30,7 +31,7 @@ class Login_3_B extends StatelessWidget {
             Icons.arrow_left_outlined,
             size: Screenheight * 0.04,
           ),
-          color: Color(0xFFE2F163),
+          color: AppColors.buttonandIConColor,
         ),
         centerTitle: true,
         title: Text(
@@ -61,7 +62,7 @@ class Login_3_B extends StatelessWidget {
               height: Screenheight * 0.37,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFB3A0FF),
+                color: AppColors.pinkcontainer,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +96,7 @@ class Login_3_B extends StatelessWidget {
                     text: 'By continuing, you agree to',
                     style: TextStyle(
                       fontFamily: "League Spartan",
-                      color: Colors.white,
+                      color: AppColors.TextColor,
                       fontSize: Screenheight * 0.014,
                       fontWeight: FontWeight.w300,
                     ),
@@ -109,7 +110,7 @@ class Login_3_B extends StatelessWidget {
                         text: 'Terms of Use',
                         style: TextStyle(
                           fontFamily: "League Spartan",
-                          color: Color(0xFFE2F163),
+                          color: AppColors.buttonandIConColor,
                           fontWeight: FontWeight.w500,
                         ),
                         recognizer: TapGestureRecognizer()..onTap = () {},
@@ -127,9 +128,7 @@ class Login_3_B extends StatelessWidget {
                         text: 'Privacy Policy',
                         style: TextStyle(
                           fontFamily: "League Spartan",
-                          color: Color(
-                            0xFFE2F163,
-                          ),
+                          color: AppColors.buttonandIConColor,
                           fontWeight: FontWeight.w500,
                         ),
                         recognizer: TapGestureRecognizer()..onTap = () {},
@@ -149,7 +148,7 @@ class Login_3_B extends StatelessWidget {
             Text(
               "or sign up with",
               style: TextStyle(
-                  color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
+                  color: AppColors.TextColor, fontWeight: FontWeight.w300),
             ),
             SizedBox(height: Screenheight * 0.01),
             Row(
@@ -181,7 +180,7 @@ class Login_3_B extends StatelessWidget {
                 Text(
                   'Already have an account?',
                   style: TextStyle(
-                      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
+                      color: AppColors.TextColor, fontWeight: FontWeight.w300),
                 ),
                 TextButton(
                     onPressed: () {
@@ -190,7 +189,7 @@ class Login_3_B extends StatelessWidget {
                     child: Text(
                       "Log In",
                       style: TextStyle(
-                          color: Color(0xFFE2F163),
+                          color: AppColors.buttonandIConColor,
                           fontWeight: FontWeight.w300),
                     ))
               ],

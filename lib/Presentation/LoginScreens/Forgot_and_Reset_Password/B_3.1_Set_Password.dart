@@ -4,6 +4,7 @@ import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/C_3.
 import 'package:gym_app/core/Widgets_Login/button.dart';
 import 'package:gym_app/core/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields__passwords.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 class setPassword extends StatelessWidget {
   const setPassword({super.key});
@@ -14,10 +15,10 @@ class setPassword extends StatelessWidget {
     double Screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.backgroundColors,
       appBar: AppBar(
-        backgroundColor: Color(0xFF232323),
-        foregroundColor: Color(0xFFE2F163),
+        backgroundColor: AppColors.backgroundColors,
+        foregroundColor: AppColors.buttonandIConColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -26,7 +27,7 @@ class setPassword extends StatelessWidget {
             Icons.arrow_left_outlined,
             size: Screenheight * 0.04,
           ),
-          color: Color(0xFFE2F163),
+          color: AppColors.buttonandIConColor,
         ),
         centerTitle: true,
         title: Text(
@@ -62,7 +63,7 @@ class setPassword extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: Screenheight * 0.02),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFB3A0FF),
+                color: AppColors.pinkcontainer,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

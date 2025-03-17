@@ -4,6 +4,7 @@ import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/B_3.
 import 'package:gym_app/core/Widgets_Login/button.dart';
 import 'package:gym_app/core/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 class ForgotenPassword extends StatelessWidget {
   const ForgotenPassword({super.key});
@@ -14,10 +15,10 @@ class ForgotenPassword extends StatelessWidget {
     double Screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.backgroundColors,
       appBar: AppBar(
-        backgroundColor: Color(0xFF232323),
-        foregroundColor: Color(0xFFE2F163),
+        backgroundColor: AppColors.backgroundColors,
+        foregroundColor: AppColors.buttonandIConColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -26,7 +27,7 @@ class ForgotenPassword extends StatelessWidget {
             Icons.arrow_left_outlined,
             size: Screenheight * 0.04,
           ),
-          color: Color(0xFFE2F163),
+          color: AppColors.buttonandIConColor,
         ),
         centerTitle: true,
         title: Text(
@@ -48,7 +49,7 @@ class ForgotenPassword extends StatelessWidget {
             SizedBox(height: Screenheight * 0.1),
             Text("Forgot Password?",
                 style: GoogleFonts.poppins(
-                    color: Colors.white,
+                    color: AppColors.TextColor,
                     fontSize: Screenheight * 0.03,
                     fontWeight: FontWeight.w700)),
             SizedBox(height: Screenheight * 0.05),
@@ -57,7 +58,7 @@ class ForgotenPassword extends StatelessWidget {
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                 style: GoogleFonts.leagueSpartan(
-                    color: Colors.white,
+                    color: AppColors.TextColor,
                     fontSize: Screenheight * 0.015,
                     fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,
@@ -68,7 +69,7 @@ class ForgotenPassword extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: Screenheight * 0.02),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFB3A0FF),
+                color: AppColors.pinkcontainer,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

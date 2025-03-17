@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart';
 import 'package:gym_app/core/Widgets_Login/button.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 class fingerPrint extends StatelessWidget {
   const fingerPrint({super.key});
@@ -12,10 +13,10 @@ class fingerPrint extends StatelessWidget {
     double Screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.backgroundColors,
       appBar: AppBar(
-        backgroundColor: Color(0xFF232323),
-        foregroundColor: Color(0xFFE2F163),
+        backgroundColor: AppColors.backgroundColors,
+        foregroundColor: AppColors.buttonandIConColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -24,7 +25,7 @@ class fingerPrint extends StatelessWidget {
             Icons.arrow_left_outlined,
             size: Screenheight * 0.04,
           ),
-          color: Color(0xFFE2F163),
+          color: AppColors.buttonandIConColor,
         ),
         centerTitle: true,
         title: Text(
@@ -61,7 +62,7 @@ class fingerPrint extends StatelessWidget {
                 width: double.infinity,
                 height: Screenheight * 0.35,
                 decoration: BoxDecoration(
-                  color: Color(0xFFB3A0FF),
+                  color: AppColors.pinkcontainer,
                 ),
                 child: Center(
                   child: Image.asset(

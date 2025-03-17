@@ -8,6 +8,7 @@ import 'package:gym_app/core/Widgets_Login/sign_up__icons.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields__passwords.dart';
 import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
+import 'package:gym_app/core/utils/colors.dart';
 
 // this is the log in screen
 class Login_3_A extends StatelessWidget {
@@ -19,10 +20,10 @@ class Login_3_A extends StatelessWidget {
     double Screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
+      backgroundColor: AppColors.backgroundColors,
       appBar: AppBar(
-        backgroundColor: Color(0xFF232323),
-        foregroundColor: Color(0xFFE2F163),
+        backgroundColor: AppColors.backgroundColors,
+        foregroundColor: AppColors.buttonandIConColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -31,7 +32,7 @@ class Login_3_A extends StatelessWidget {
             Icons.arrow_left_outlined,
             size: Screenheight * 0.04,
           ),
-          color: Color(0xFFE2F163),
+          color: AppColors.buttonandIConColor,
         ),
         centerTitle: true,
         title: Text(
@@ -73,7 +74,7 @@ class Login_3_A extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: Screenheight * 0.02),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFB3A0FF),
+                color: AppColors.pinkcontainer,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,7 +101,7 @@ class Login_3_A extends StatelessWidget {
                         "Forgot Password?",
                         style: GoogleFonts.poppins(
                           fontSize: Screenheight * 0.014,
-                          color: Color(0xFF232323),
+                          color: AppColors.backgroundColors,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -118,7 +119,7 @@ class Login_3_A extends StatelessWidget {
             Text(
               "or sign up with",
               style: TextStyle(
-                  color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
+                  color: AppColors.TextColor, fontWeight: FontWeight.w300),
             ),
             SizedBox(height: Screenheight * 0.01),
             Row(
@@ -150,7 +151,7 @@ class Login_3_A extends StatelessWidget {
                 Text(
                   'Don’t have an account?',
                   style: TextStyle(
-                      color: Color(0xFFFFFFFF), fontWeight: FontWeight.w300),
+                      color: AppColors.TextColor, fontWeight: FontWeight.w300),
                 ),
                 TextButton(
                     onPressed: () {
@@ -163,7 +164,7 @@ class Login_3_A extends StatelessWidget {
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
-                          color: Color(0xFFE2F163),
+                          color: AppColors.buttonandIConColor,
                           fontWeight: FontWeight.w300),
                     ))
               ],
