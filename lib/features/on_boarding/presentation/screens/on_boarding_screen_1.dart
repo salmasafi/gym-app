@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/features/on_boarding/presentation/screens/screen_boarding_1.dart';
 
 class OnBoardingScreen1 extends StatefulWidget {
@@ -11,77 +12,79 @@ class OnBoardingScreen1 extends StatefulWidget {
 class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
   @override
   void initState() {
+    super.initState();
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => OnboardingScreen()));
+        context,
+        MaterialPageRoute(builder: (context) => OnboardingScreen()),
+      );
     });
-    // TODO: implement initState
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Stack(
-          children: [
-            Positioned.fill(
-              child: Image.asset(
-                'assets/images/on_boarding_background_1.png',
-                fit: BoxFit.cover,
-              ),
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Background Image
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/on_boarding_background_1.png',
+              fit: BoxFit.cover,
             ),
-            Center(
-              child: Image.asset(
-                'assets/images/Rectangle.png',
-                fit: BoxFit.cover,
-                width: screenWidth,
-                height: screenHeight,
-              ),
+          ),
+          // Transparent Background Overlay
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/Rectangle.png',
+              fit: BoxFit.cover,
+              width: screenWidth,
+              height: screenHeight,
             ),
-            Column(
+          ),
+          // Centered Content
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 326,
-                    left: 100,
+                // "Welcome to" Text
+                Text(
+                  "Welcome to",
+                  style: TextStyle(
+                    color: AppColors.secondaryColor,
+                    fontFamily: "LeagueSpartan-Extrabold",
+                    fontWeight: FontWeight.w900,
+                    fontSize: screenWidth * 0.08, // Responsive font size
                   ),
-                  child: Text(
-                    "Welcome to",
-                    style: TextStyle(
-                      color: Color(0xFFE2F163),
-                      fontFamily: "LeagueSpartan-Extrabold",
-                      fontWeight: FontWeight.w900,
-                      fontSize: 30,
-                    ),
-                  ),
+                  textAlign: TextAlign.center,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 18, left: 90),
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                  ),
+                SizedBox(height: screenHeight * 0.02), // Adjust spacing
+                // Logo Image
+                Image.asset(
+                  "assets/images/logo.png",
+                  width: screenWidth * 0.4, // Responsive logo size
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 75),
-                  child: Text(
-                    "Gym App",
-                    style: TextStyle(
-                      color: Color(0xFFE2F163),
-                      fontFamily: "Poppins",
-                      fontSize: 54.04,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                    ),
+                SizedBox(height: screenHeight * 0.02),
+                // "Gym App" Text
+                Text(
+                  "Gym App",
+                  style: TextStyle(
+                    color: AppColors.secondaryColor,
+                    fontFamily: "Poppins",
+                    fontSize: screenWidth * 0.12,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.italic,
                   ),
-                )
+                  textAlign: TextAlign.center,
+                ),
               ],
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
