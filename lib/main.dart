@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-<<<<<<< HEAD
 import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
-=======
 import 'package:gym_app/core/Logic/cubit/startbutton_cubit.dart';
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
 import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
 //import 'package:gym_app/features/Search/presentation/search.dart';
 //import 'package:gym_app/features/favourties/presentation/favourites.dart';

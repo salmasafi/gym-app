@@ -1,10 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart';
-=======
 import 'package:gym_app/core/utils/colors.dart';
->>>>>>> saif
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -134,47 +131,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ],
                       ),
                     ),
-<<<<<<< HEAD
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 65, left: 315),
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return Login_3_A();
-                                      },
-                                    ),
-                                    (route) => false,
-                                  );
-                                },
-                                child: Text(
-                                  "Skip",
-                                  style: TextStyle(
-                                    color: Color(0xFFE2F163),
-                                    fontSize: 18,
-                                    fontFamily: "LeagueSpartan",
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 65),
-                              child: Icon(
-                                Icons.arrow_right_sharp,
-                                size: 30,
-                                color: Color(0xFFE2F163),
-                              ),
-                            ),
-                          ],
-=======
                   ),
                   // Page Indicator
                   Positioned(
@@ -190,7 +146,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           dotColor: AppColors.whiteColor,
                           dotHeight: screenWidth * 0.02,
                           dotWidth: screenWidth * 0.02,
->>>>>>> saif
                         ),
                       ),
                     ),
@@ -249,7 +204,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ],
                           ),
                         ),
-<<<<<<< HEAD
                         SizedBox(height: 16),
                         SmoothPageIndicator(
                           controller: _controller,
@@ -265,21 +219,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () {
                             if (_currentIndex == _onboardingData.length - 1) {
-<<<<<<< HEAD
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Login_3_A()),
-=======
-                              Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return Login_3_A();
-                                  },
-                                ),
-                                (route) => false,
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                               );
                             } else {
                               _controller.nextPage(
@@ -327,10 +270,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                           ),
                         ),
-                      ],
-=======
                       ),
->>>>>>> saif
                     ),
                   ),
                 ],
