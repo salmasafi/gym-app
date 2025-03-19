@@ -10,6 +10,7 @@ import 'package:gym_app/features/set_up/presentation/screens/sc_408.dart';
 import 'package:gym_app/features/homescreen/presentation/screens/home_screen.dart';
 import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
 import 'package:gym_app/features/profil/presentation/screens/edit_profile.dart';
+import 'package:gym_app/features/profil/presentation/screens/profile.dart';
 //import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
 //import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
 >>>>>>> 2199e6c14a5c7e44f255798e373712280c48e7a5
@@ -42,9 +43,9 @@ class MainApp extends StatelessWidget {
 =======
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeScreen(),
+      //home:HomeScreen(),
       //home: OnBoardingScreen1(),
-      // home: SixdotOneProfileScreen(),
+       home: SixdotOneProfileScreen(),
       //home: ProfileEdit(),
       //home: NotificationScreenWorkout(),
 >>>>>>> 2199e6c14a5c7e44f255798e373712280c48e7a5

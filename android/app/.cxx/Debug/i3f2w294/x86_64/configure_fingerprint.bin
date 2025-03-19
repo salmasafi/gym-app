@@ -2,54 +2,27 @@ C/C++ Structured LogO
 M
 KC:\src\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txtC
 A
-<<<<<<< HEAD
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	Ã’æÆÖ2§ ÃÔ„ŒĞ2]
+?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	£ˆşØ2§ ÃÔ„ŒĞ2]
 [
-YD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\additional_project_files.txt	Ã’æÆÖ2 „Ü’—Ö2Z
+YD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\additional_project_files.txt	£ˆşØ2 „Ü’—Ö2Z
 X
-VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build.json	Ã’æÆÖ2™ Ü’—Ö2_
+VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build.json	£ˆşØ2™ Ü’—Ö2_
 ]
-[D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build_mini.json	Ã’æÆÖ2ğ ’Ü’—Ö2L
+[D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build_mini.json	£ˆşØ2ğ ’Ü’—Ö2L
 J
-HD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja	Ã’æÆÖ2ïÖ ÚÙ’—Ö2P
+HD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja	£ˆşØ2ïÖ ÚÙ’—Ö2P
 N
-LD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja.txt	Ã’æÆÖ2U
+LD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja.txt	£ˆşØ2U
 S
-QD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build_file_index.txt	Ã’æÆÖ2K –Ü’—Ö2V
+QD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build_file_index.txt	£ˆşØ2K –Ü’—Ö2V
 T
-RD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json	Ã’æÆÖ2	Z
+RD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json	£ˆşØ2	Z
 X
-VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json.bin	Ã’æÆÖ2
+VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json.bin	£ˆşØ2
 `
 ^
-\D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\metadata_generation_command.txt	Ã’æÆÖ2› ”Ü’—Ö2S
+\D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\metadata_generation_command.txt	£ˆşØ2› ”Ü’—Ö2S
 Q
-OD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\prefab_config.json	Ã’æÆÖ2( •Ü’—Ö2X
+OD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\prefab_config.json	£ˆşØ2( •Ü’—Ö2X
 V
-TD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\symbol_folder_index.txt	Ã’æÆÖ2K •Ü’—Ö2
-=======
-?com.android.build.gradle.internal.cxx.io.EncodedFileFingerPrint	İ¥í¾×2§ ÃÔ„ŒĞ2]
-[
-YD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\additional_project_files.txt	İ¥í¾×2 „Ü’—Ö2Z
-X
-VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build.json	İ¥í¾×2™ Ü’—Ö2_
-]
-[D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\android_gradle_build_mini.json	İ¥í¾×2ğ ’Ü’—Ö2L
-J
-HD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja	İ¥í¾×2ïÖ ÚÙ’—Ö2P
-N
-LD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build.ninja.txt	İ¥í¾×2U
-S
-QD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\build_file_index.txt	İ¥í¾×2K –Ü’—Ö2V
-T
-RD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json	Ş¥í¾×2	Z
-X
-VD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\compile_commands.json.bin	Ş¥í¾×2
-`
-^
-\D:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\metadata_generation_command.txt	Ş¥í¾×2› ”Ü’—Ö2S
-Q
-OD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\prefab_config.json	Ş¥í¾×2( •Ü’—Ö2X
-V
-TD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\symbol_folder_index.txt	Ş¥í¾×2K •Ü’—Ö2
->>>>>>> yasmeena
+TD:\New folder\gym-app\android\app\.cxx\Debug\i3f2w294\x86_64\symbol_folder_index.txt	£ˆşØ2K •Ü’—Ö2
