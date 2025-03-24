@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-//<<<<<<< HEAD
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
 import 'package:gym_app/core/Logic/cubit/startbutton_cubit.dart';
-import 'package:gym_app/features/set_up/presentation/screens/sc_405.dart';
-import 'package:gym_app/features/set_up/presentation/screens/sc_406.dart';
-import 'package:gym_app/features/set_up/presentation/screens/sc_408.dart';
-//=======
-import 'package:gym_app/features/homescreen/presentation/screens/home_screen.dart';
 import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
-import 'package:gym_app/features/profil/presentation/screens/edit_profile.dart';
-import 'package:gym_app/features/profil/presentation/screens/profile.dart';
+//import 'package:gym_app/features/Search/presentation/search.dart';
+//import 'package:gym_app/features/favourties/presentation/favourites.dart';
 //import 'package:gym_app/features/on_boarding/presentation/screens/on_boarding_screen_1.dart';
-//import 'package:gym_app/features/profile/presentation/screens/6.1.1profile_edit.dart';
-//>>>>>>> 2199e6c14a5c7e44f255798e373712280c48e7a5
-
-//import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
-//import 'package:gym_app/setup_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MaterialApp(
+      builder: (context, child) {
+        ScreenUtil.init(
+          context,
+          designSize: const Size(375, 812),
+          minTextAdapt: true,
+          splitScreenMode: true,
+        );
+        return child!;
+      },
+      home: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -27,20 +31,39 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => BmiInfoRequestCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: OnBoardingScreen1(),
+        // home: SixdotOneProfileScreen(),
+        //home: ProfileEdit(),
+        //home: NotificationScreenWorkout(),
+      ),
+=======
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      //OnBoardingScreen1()
+      home: OnBoardingScreen1(),
+>>>>>>> saif
+    );
+=======
     return BlocProvider(
       create: (context) => StartbuttonCubit(),
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Sc405(),
-          // home: SixdotOneProfileScreen(),
-          //home: ProfileEdit(),
-          //home: NotificationScreenWorkout(),
+          home: OnBoardingScreen1(),
         ),
       ),
-    );
-
+      );
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
   }
 }

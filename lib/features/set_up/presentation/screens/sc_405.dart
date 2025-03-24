@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gym_app/core/utils/colors.dart';
+import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
 import 'package:gym_app/features/set_up/presentation/screens/sc_406.dart';
 
 class Sc405 extends StatefulWidget {
@@ -11,7 +13,8 @@ class Sc405 extends StatefulWidget {
 }
 
 class _Sc401State extends State<Sc405> {
-  double _height = 165;
+  int height = 165;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +50,7 @@ class _Sc401State extends State<Sc405> {
               height: 40.h,
             ),
             Padding(
-              padding:  EdgeInsets.all(8.0.r),
+              padding: EdgeInsets.all(8.0.r),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: TextStyle(
@@ -62,13 +65,59 @@ class _Sc401State extends State<Sc405> {
               height: 40.h,
             ),
             Text(
-              "${_height.toInt()} Cm",
+              "${height.toInt()} Cm",
               style: TextStyle(
                   fontFamily: "Poppins",
                   fontSize: 60.sp,
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w800),
             ),
+<<<<<<< HEAD
+            BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
+              builder: (context, state) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.4,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          child: RotatedBox(
+                            quarterTurns: -1,
+                            child: SliderTheme(
+                              data: SliderTheme.of(context).copyWith(
+                                activeTrackColor: AppColors.primaryColor,
+                                inactiveTrackColor: AppColors.primaryColor,
+                                thumbColor: AppColors.secondaryColor,
+                                overlayColor:
+                                    AppColors.secondaryColor.withValues(),
+                                trackHeight: 20,
+                                thumbShape: const RoundSliderThumbShape(
+                                    enabledThumbRadius: 5),
+                              ),
+                              child: BlocBuilder<BmiInfoRequestCubit,
+                                  BmiInfoRequestState>(
+                                builder: (context, state) {
+                                  return Slider(
+                                    min: 140,
+                                    max: 220,
+                                    value: height.toDouble(),
+                                    onChanged: (value) {
+                                      height = value.toInt();
+                                      context
+                                          .read<BmiInfoRequestCubit>()
+                                          .getHeightValue(height.toString());
+
+                                      context
+                                          .read<BmiInfoRequestCubit>()
+                                          .getHeightUnit("Cm");
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+=======
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -85,9 +134,9 @@ class _Sc401State extends State<Sc405> {
                             inactiveTrackColor: AppColors.primaryColor,
                             thumbColor: AppColors.secondaryColor,
                             overlayColor: AppColors.secondaryColor.withValues(),
-                            trackHeight: 20,
+                            trackHeight: 50,
                             thumbShape: const RoundSliderThumbShape(
-                                enabledThumbRadius: 5),
+                                enabledThumbRadius: 20),
                           ),
                           child: Slider(
                             min: 140,
@@ -98,36 +147,49 @@ class _Sc401State extends State<Sc405> {
                                 _height = value;
                               });
                             },
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                )
-              ],
+                    )
+                  ],
+                );
+              },
             ),
             SizedBox(
               height: 40.h,
             ),
-            OutlinedButton(style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(AppColors.blackColor) , 
-              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20 ,)))
+            OutlinedButton(
+              style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                    20,
+                  )))),
+              onPressed: () {
+                Navigator.push(
+<<<<<<< HEAD
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Sc406(),
+                    ));
+=======
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Sc406(),
+                  ),
+                );
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
+              },
+              child: Text(
+                "Continue",
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.whiteColor),
+              ),
             ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Sc406(),)) ;
-                },
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                      fontFamily: "Poppins",
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w700 , 
-                      color: AppColors.whiteColor),
-                      
-                ),),
-                  
-                
           ],
         ),
       ),

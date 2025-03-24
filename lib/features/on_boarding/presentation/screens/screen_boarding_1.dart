@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
+import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart';
+import 'package:gym_app/core/utils/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -37,104 +38,170 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Stack(
-          children: [
-            PageView.builder(
-              controller: _controller,
-              itemCount: _onboardingData.length,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-              itemBuilder: (context, index) {
-                return Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        _onboardingData[index]["image"]!,
-                        fit: BoxFit.cover,
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView.builder(
+            controller: _controller,
+            itemCount: _onboardingData.length,
+            onPageChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            itemBuilder: (context, index) {
+              return Stack(
+                children: [
+                  // Background Image
+                  Positioned.fill(
+                    child: Image.asset(
+                      _onboardingData[index]["image"]!,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  // Transparent Overlay
+                  Positioned.fill(
+                    child: Image.asset(
+                      'assets/images/Rectangle_1.png',
+                      fit: BoxFit.cover,
+                      width: screenWidth,
+                      height: screenHeight,
+                    ),
+                  ),
+                  // Skip Button
+                  Positioned(
+                    top: screenHeight * 0.08,
+                    right: screenWidth * 0.05,
+                    child: GestureDetector(
+                      onTap: () {
+                        _controller.jumpToPage(_onboardingData.length - 1);
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            "Skip",
+                            style: TextStyle(
+                              color: AppColors.secondaryColor,
+                              fontSize: screenWidth * 0.045,
+                              fontFamily: "LeagueSpartan",
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_right_sharp,
+                            size: screenWidth * 0.07,
+                            color: AppColors.secondaryColor,
+                          ),
+                        ],
                       ),
                     ),
-                    Center(
-                      child: Image.asset(
-                        'assets/images/Rectangle_1.png',
-                        fit: BoxFit.cover,
-                        width: screenWidth,
-                        height: screenHeight,
+                  ),
+                  // Content Container
+                  Positioned(
+                    top: screenHeight * 0.38,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+                      color: AppColors.primaryColor,
+                      width: screenWidth,
+                      padding:
+                          EdgeInsets.symmetric(vertical: screenHeight * 0.03),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(
+                            _onboardingData[index]["logo"]!,
+                            width: screenWidth * 0.2,
+                          ),
+                          SizedBox(height: screenHeight * 0.01),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: screenWidth * 0.05),
+                            child: Text(
+                              _onboardingData[index]["title"]!,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontSize: screenWidth * 0.05,
+                                color: AppColors.whiteColor,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 65, left: 315),
-                              child: GestureDetector(
-                                onTap: () {
-                                  _controller
-                                      .jumpToPage(_onboardingData.length - 1);
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) {
-                                      return Login_3_A();
-                                    },
-                                  ));
-                                },
-                                child: Text(
-                                  "Skip",
-                                  style: TextStyle(
-                                    color: Color(0xFFE2F163),
-                                    fontSize: 18,
-                                    fontFamily: "LeagueSpartan",
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 65),
-                              child: Icon(
-                                Icons.arrow_right_sharp,
-                                size: 30,
-                                color: Color(0xFFE2F163),
-                              ),
-                            ),
-                          ],
+                  ),
+                  // Page Indicator
+                  Positioned(
+                    top: screenHeight * 0.65,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: SmoothPageIndicator(
+                        controller: _controller,
+                        count: _onboardingData.length,
+                        effect: WormEffect(
+                          activeDotColor: AppColors.secondaryColor,
+                          dotColor: AppColors.whiteColor,
+                          dotHeight: screenWidth * 0.02,
+                          dotWidth: screenWidth * 0.02,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 272),
-                          child: Container(
-                            color: Color(0xFFB3A0FF),
-                            width: screenWidth,
-                            height: screenHeight * 0.2,
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 16),
-                                  child: Image.asset(
-                                    _onboardingData[index]["logo"]!,
+                      ),
+                    ),
+                  ),
+                  // Next / Get Started Button
+                  Positioned(
+                    top: screenHeight * 0.7,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          if (_currentIndex == _onboardingData.length - 1) {
+                            // Navigate to home screen
+                          } else {
+                            _controller.nextPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
+                          }
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Stack(
+                            children: [
+                              BackdropFilter(
+                                filter:
+                                    ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                                child: Container(
+                                  width: screenWidth * 0.53,
+                                  height: screenHeight * 0.06,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                        color: AppColors.whiteColor,
+                                        width: 0.3),
+                                    color: Color.fromRGBO(255, 255, 255, 0.09),
                                   ),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 10, left: 8),
+                              ),
+                              Positioned.fill(
+                                child: Center(
                                   child: Text(
-                                    _onboardingData[index]["title"]!,
-                                    textAlign: TextAlign.center,
+                                    _currentIndex == _onboardingData.length - 1
+                                        ? "Get Started"
+                                        : "Next",
                                     style: TextStyle(
+                                      color: AppColors.whiteColor,
                                       fontFamily: "Poppins",
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: screenWidth * 0.045,
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(height: 16),
@@ -152,6 +219,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () {
                             if (_currentIndex == _onboardingData.length - 1) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login_3_A()),
+                              );
                             } else {
                               _controller.nextPage(
                                 duration: Duration(milliseconds: 300),
@@ -198,14 +270,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                  ],
-                );
-              },
-            ),
-          ],
-        ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ],
       ),
     );
   }

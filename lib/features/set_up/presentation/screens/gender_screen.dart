@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/core/widgets/custom_button.dart';
+import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
 import 'package:gym_app/features/set_up/presentation/screens/age_screen.dart';
-
 
 class GenderSelectionScreen extends StatefulWidget {
   const GenderSelectionScreen({super.key});
@@ -31,16 +32,16 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
         ),
         title: Container(
           padding: EdgeInsets.zero,
-        alignment: Alignment.centerLeft,
+          alignment: Alignment.centerLeft,
           child: Text(
-          
             "Back",
-            style: TextStyle(color:AppColors.secondaryColor, fontSize: 16 , fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: AppColors.secondaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
           ),
         ),
-  ),
-  
-      
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
@@ -70,34 +71,40 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
               ),
             ),
             SizedBox(height: 50),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedGender = 'Male';
-                });
+            BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
+              builder: (context, state) {
+                return Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        context.read<BmiInfoRequestCubit>().getGender("Male");
+                      },
+                      child: GenderOption(
+                        icon: Icons.male,
+                        label: 'Male',
+                        isSelected: state is BmiInfoRequestGenderMale,
+                        iconColor: state is BmiInfoRequestGenderMale
+                            ? Colors.black
+                            : Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    GestureDetector(
+                      onTap: () {
+                        context.read<BmiInfoRequestCubit>().getGender("Female");
+                      },
+                      child: GenderOption(
+                        icon: Icons.female,
+                        label: 'Female',
+                        isSelected: state is BmiInfoRequestGenderFemale,
+                        iconColor: state is BmiInfoRequestGenderFemale
+                            ? Colors.black
+                            : Colors.white,
+                      ),
+                    ),
+                  ],
+                );
               },
-              child: GenderOption(
-                icon: Icons.male,
-                label: 'Male',
-                isSelected: selectedGender == 'Male',
-                iconColor:
-                    selectedGender == 'Male' ? Colors.black : Colors.white,
-              ),
-            ),
-            SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedGender = 'Female';
-                });
-              },
-              child: GenderOption(
-                icon: Icons.female,
-                label: 'Female',
-                isSelected: selectedGender == 'Female',
-                iconColor:
-                    selectedGender == 'Female' ? Colors.black : Colors.white,
-              ),
             ),
             Spacer(),
             CustomButton(
@@ -114,7 +121,6 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
               height: 44,
               buttonColor: Color(0xff373737),
               borderRadius: 30,
-             
             ),
             SizedBox(height: 20),
           ],
@@ -130,7 +136,8 @@ class GenderOption extends StatelessWidget {
   final bool isSelected;
   final Color iconColor;
 
-  const GenderOption({super.key, 
+  const GenderOption({
+    super.key,
     required this.icon,
     required this.label,
     required this.isSelected,

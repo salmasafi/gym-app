@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/core/widgets/custom_button.dart';
+import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
+import 'package:gym_app/features/set_up/presentation/screens/sc_405.dart';
 import 'package:gym_app/features/set_up/presentation/screens/weight_screen.dart';
 import 'package:numberpicker/numberpicker.dart';
 
@@ -33,7 +36,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
           alignment: Alignment.centerLeft,
           child: Text(
             "Back",
-            style: TextStyle(color: AppColors.secondaryColor, fontSize: 16 , fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: AppColors.secondaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -62,13 +68,19 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
             ),
           ),
           SizedBox(height: 40),
-          Text(
-            "$_currentAge",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 45,
-              fontWeight: FontWeight.bold,
-            ),
+          BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
+            builder: (context, state) {
+              final _currentAge = context.read<BmiInfoRequestCubit>().age ?? 18;
+
+              return Text(
+                "$_currentAge",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 45,
+                  fontWeight: FontWeight.bold,
+                ),
+              );
+            },
           ),
           SizedBox(height: 20),
           Icon(Icons.arrow_drop_up, color: Colors.yellow, size: 40),
@@ -76,26 +88,30 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
           Container(
             width: double.infinity,
             color: AppColors.primaryColor,
-            child: NumberPicker(
-              itemHeight: 100,
-              itemCount: 6,
-              value: _currentAge,
-              minValue: 15,
-              maxValue: 99,
-              axis: Axis.horizontal,
-              selectedTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-              textStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-              ),
-              onChanged: (value) {
-                setState(() {
-                  _currentAge = value;
-                });
+            child: BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
+              builder: (context, state) {
+                return NumberPicker(
+                  itemHeight: 100,
+                  itemCount: 6,
+                  value: _currentAge,
+                  minValue: 15,
+                  maxValue: 99,
+                  axis: Axis.horizontal,
+                  selectedTextStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
+                  onChanged: (value) {
+                    context
+                        .read<BmiInfoRequestCubit>()
+                        .getAge((_currentAge = value).toString());
+                  },
+                );
               },
             ),
           ),
@@ -103,7 +119,10 @@ class _AgeSelectionScreenState extends State<AgeSelectionScreen> {
           CustomButton(
             buttonText: "Next",
             onPress: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => WeightSelectionScreen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => WeightSelectionScreen()));
             },
             width: 178,
             height: 44,

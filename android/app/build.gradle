@@ -7,8 +7,13 @@ plugins {
 
 android {
     namespace = "com.example.gym_app"
+<<<<<<< HEAD
+    compileSdk = 34
+    ndkVersion = "23.2.8568313"
+=======
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+>>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
