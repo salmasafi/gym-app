@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SignUp_Icons extends StatelessWidget {
-  const SignUp_Icons({
+class SignUp_Iconss extends StatelessWidget {
+  const SignUp_Iconss({
     super.key,
     required this.Screenheight,
     required this.ScreenWidth,

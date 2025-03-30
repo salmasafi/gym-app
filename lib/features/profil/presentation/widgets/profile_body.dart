@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gym_app/features/profil/presentation/screens/edit_profile.dart';
 
@@ -97,7 +96,7 @@ class Body extends StatelessWidget {
         SizedBox(
           height: 30,
         ),
-        buildMenuItem(Icons.person, "Profile", () {
+        buildMenuItem(Icons.person, "Profile", onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -109,24 +108,34 @@ class Body extends StatelessWidget {
         buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
         buildMenuItem(Icons.settings, "Settings"),
         buildMenuItem(Icons.phone_callback_sharp, "Help"),
-<<<<<<< HEAD
-        buildMenuItem(Icons.exit_to_app_rounded, "Logout",onTap: () => _showLogoutDialog(context))
-
+        buildMenuItem(Icons.exit_to_app_rounded, "Logout",
+            onTap: () => _showLogoutDialog(context))
       ],
     );
   }
+
   Widget buildMenuItem(IconData icon, String text, {VoidCallback? onTap}) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor:  Color(0xff896CFE),
-        child: Icon(icon, color: Colors.white, size:40,),
+        backgroundColor: Color(0xff896CFE),
+        child: Icon(
+          icon,
+          color: Colors.white,
+          size: 40,
+        ),
       ),
-      title: Text(text, style: TextStyle(color: Colors.white, fontSize: 20, fontWeight:FontWeight.w400),),
-      trailing: Icon(Icons.arrow_right, color: Colors.amberAccent,),
+      title: Text(
+        text,
+        style: TextStyle(
+            color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),
+      ),
+      trailing: Icon(
+        Icons.arrow_right,
+        color: Colors.amberAccent,
+      ),
       onTap: onTap,
     );
   }
-
 
   void _showLogoutDialog(BuildContext context) {
     showGeneralDialog(
@@ -150,24 +159,30 @@ class Body extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min, // Makes it compact
                 children: [
-                  Text("Are you sure you want to log out?", textAlign: TextAlign.center),
+                  Text("Are you sure you want to log out?",
+                      textAlign: TextAlign.center),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white),
                         onPressed: () {
                           Navigator.of(context).pop(); // Close the dialog
                         },
-                        child: Text("Cancel", style: TextStyle(color: Color(0xff896CFE), fontSize: 20)),
+                        child: Text("Cancel",
+                            style: TextStyle(
+                                color: Color(0xff896CFE), fontSize: 20)),
                       ),
                       ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.yellow),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.yellow),
                         onPressed: () {
                           Navigator.of(context).pop(); // Close the dialog
                         },
-                        child: Text("Yes, logout", style: TextStyle(color: Colors.black)),
+                        child: Text("Yes, logout",
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ],
                   )
@@ -179,34 +194,4 @@ class Body extends StatelessWidget {
       },
     );
   }
-
 }
-=======
-        buildMenuItem(Icons.exit_to_app_rounded, "Logout")
-      ],
-    );
-  }
-
-  Widget buildMenuItem(IconData icon, String text, [VoidCallback? onTap]) {
-    return ListTile(
-        leading: CircleAvatar(
-          backgroundColor: Color(0xff896CFE),
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 40,
-          ),
-        ),
-        title: Text(
-          text,
-          style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),
-        ),
-        trailing: Icon(
-          Icons.arrow_right,
-          color: Colors.amberAccent,
-        ),
-        onTap: onTap);
-  }
-}
->>>>>>> fb21f0e4b5cf3571fc21a1243f2b52d890c8691d

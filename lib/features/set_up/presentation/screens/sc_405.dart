@@ -72,7 +72,6 @@ class _Sc401State extends State<Sc405> {
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w800),
             ),
-<<<<<<< HEAD
             BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
               builder: (context, state) {
                 return Row(
@@ -117,37 +116,6 @@ class _Sc401State extends State<Sc405> {
                                 },
                               ),
                             ),
-=======
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Center(
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.4,
-                      width: MediaQuery.of(context).size.width * 0.1,
-                      child: RotatedBox(
-                        quarterTurns: -1,
-                        child: SliderTheme(
-                          data: SliderTheme.of(context).copyWith(
-                            activeTrackColor: AppColors.primaryColor,
-                            inactiveTrackColor: AppColors.primaryColor,
-                            thumbColor: AppColors.secondaryColor,
-                            overlayColor: AppColors.secondaryColor.withValues(),
-                            trackHeight: 50,
-                            thumbShape: const RoundSliderThumbShape(
-                                enabledThumbRadius: 20),
-                          ),
-                          child: Slider(
-                            min: 140,
-                            max: 220,
-                            value: _height,
-                            onChanged: (value) {
-                              setState(() {
-                                _height = value;
-                              });
-                            },
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                           ),
                         ),
                       ),
@@ -168,18 +136,10 @@ class _Sc401State extends State<Sc405> {
                   )))),
               onPressed: () {
                 Navigator.push(
-<<<<<<< HEAD
                     context,
                     MaterialPageRoute(
                       builder: (context) => Sc406(),
                     ));
-=======
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Sc406(),
-                  ),
-                );
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
               },
               child: Text(
                 "Continue",

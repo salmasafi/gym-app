@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/Excersie/Widgets/SearchButton.dart';
 import 'package:gym_app/core/utils/colors.dart';
 
 enum SortBy { all, video, article }
@@ -130,7 +131,10 @@ class _FavouritesState extends State<Favourites> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        actions: const [SearchButton()],
+      ),
+      backgroundColor: AppColors.backgroundColors,
       bottomNavigationBar: Container(
         height: screenWidth * 0.18,
         decoration: BoxDecoration(
@@ -204,7 +208,7 @@ class _FavouritesState extends State<Favourites> {
                 Text(
                   "Favorites",
                   style: TextStyle(
-                    color: AppColors.text,
+                    color: AppColors.TextColor,
                     fontSize: screenWidth * 0.07,
                     fontWeight: FontWeight.bold,
                     fontFamily: "Poppins",
@@ -213,19 +217,19 @@ class _FavouritesState extends State<Favourites> {
                 Spacer(),
                 Icon(
                   Icons.search,
-                  color: AppColors.text,
+                  color: AppColors.TextColor,
                   size: screenWidth * 0.07,
                 ),
                 SizedBox(width: 15),
                 Icon(
                   Icons.notifications,
-                  color: AppColors.text,
+                  color: AppColors.TextColor,
                   size: screenWidth * 0.07,
                 ),
                 SizedBox(width: 15),
                 Icon(
                   Icons.person,
-                  color: AppColors.text,
+                  color: AppColors.TextColor,
                   size: screenWidth * 0.07,
                 ),
               ],
@@ -333,7 +337,7 @@ class _FavouritesState extends State<Favourites> {
                                 top: 45,
                                 left: 70,
                                 child: Icon(Icons.play_circle_fill,
-                                    color: AppColors.text, size: 30),
+                                    color: AppColors.TextColor, size: 30),
                               ),
                             Positioned(
                               top: 5,
@@ -375,7 +379,7 @@ class FilterButton extends StatelessWidget {
         onPressed: onTap,
         child: Text(label,
             style: TextStyle(
-              color: AppColors.text,
+              color: AppColors.TextColor,
               fontFamily: "Poppins",
             )),
       ),

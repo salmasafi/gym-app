@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_app/Excersie/Widgets/SearchButton.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/article_card.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/build_header.dart';
 import 'package:gym_app/features/homescreen/presentation/widgets/category_item.dart';
@@ -10,8 +11,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        actions: const [SearchButton()],
+      ),
       backgroundColor: Colors.black,
-      bottomNavigationBar:  Container(
+      bottomNavigationBar: Container(
         height: 60,
         decoration: const BoxDecoration(
           color: Color(0xffB3A0FF), // Light purple color
@@ -34,15 +39,12 @@ class HomeScreen extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              top:386 ,
+                top: 386,
                 child: Container(
-                  height:181,
+                  height: 181,
                   width: 393,
-                  decoration: BoxDecoration(
-                    color: Color(0xffB3A0FF)
-                  ),
-                )
-            ),
+                  decoration: BoxDecoration(color: Color(0xffB3A0FF)),
+                )),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 61),
               child: Column(
@@ -56,12 +58,13 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 45),
                   Positioned(
                     top: 413,
-                    child: WeeklyChallengeCard(),),
+                    child: WeeklyChallengeCard(),
+                  ),
                   const SizedBox(height: 20),
                   Positioned(
                     top: 611,
-                    child: _buildArticlesAndTips(),)
-
+                    child: _buildArticlesAndTips(),
+                  )
                 ],
               ),
             ),
@@ -118,7 +121,6 @@ class HomeScreen extends StatelessWidget {
     );*/
   }
 
-
   Widget _buildCategoryButtons() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -131,7 +133,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-
   Widget _buildRecommendations() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,8 +144,16 @@ class HomeScreen extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              recommindation_card(title: "  Squat Exercise", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/women.jpg"),
-              recommindation_card(title: "  Full Body Stretching", duration: "12 Minutes", kcal: "120 Kcal", imageUrl: "assets/images/home2.jpg"),
+              recommindation_card(
+                  title: "  Squat Exercise",
+                  duration: "12 Minutes",
+                  kcal: "120 Kcal",
+                  imageUrl: "assets/images/women.jpg"),
+              recommindation_card(
+                  title: "  Full Body Stretching",
+                  duration: "12 Minutes",
+                  kcal: "120 Kcal",
+                  imageUrl: "assets/images/home2.jpg"),
             ],
           ),
         )
@@ -152,19 +161,22 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
- Widget _buildArticlesAndTips() {
+  Widget _buildArticlesAndTips() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         sectionHeader("Articles & Tips"),
-
         SizedBox(
           height: 175,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              article_card(title: "Supplement Guide", imageUrl: "assets/images/article1.jpg"),
-              article_card(title: "Quick & Effective Routines", imageUrl: "assets/images/article2.jpg"),
+              article_card(
+                  title: "Supplement Guide",
+                  imageUrl: "assets/images/article1.jpg"),
+              article_card(
+                  title: "Quick & Effective Routines",
+                  imageUrl: "assets/images/article2.jpg"),
             ],
           ),
         )
@@ -177,7 +189,11 @@ class HomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
-            style: const TextStyle(color: Color(0xffE2F163), fontSize: 15, fontWeight: FontWeight.w500 ,fontFamily: "Poppins" )),
+            style: const TextStyle(
+                color: Color(0xffE2F163),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                fontFamily: "Poppins")),
         TextButton(
           onPressed: () {},
           child: Row(
@@ -186,7 +202,7 @@ class HomeScreen extends StatelessWidget {
                 'See All',
                 style: TextStyle(color: Colors.white),
               ),
-              Icon(Icons.arrow_right, color:Color(0xffE2F163))
+              Icon(Icons.arrow_right, color: Color(0xffE2F163))
             ],
           ),
         )
@@ -194,4 +210,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

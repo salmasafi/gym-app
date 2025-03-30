@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-<<<<<<< HEAD:lib/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart
 import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_B.dart';
 import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/A_3.1_Forgotten_Password.dart';
+import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
 import 'package:gym_app/core/Widgets_Login/button.dart';
 import 'package:gym_app/core/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/core/Widgets_Login/sign_up__icons.dart';
@@ -10,13 +10,6 @@ import 'package:gym_app/core/Widgets_Login/text_fields.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields__passwords.dart';
 import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
 import 'package:gym_app/core/utils/colors.dart';
-=======
-import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_B.dart';
-import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/A_3.1_Forgotten_Password.dart';
-import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
-import 'package:gym_app/Widgets/Widgets.dart';
-import 'package:gym_app/features/set_up/presentation/screens/setup_screen.dart';
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399:lib/LoginScreens/3.0_Log_In/Login_3_A.dart
 
 // this is the log in screen
 class Login_3_A extends StatelessWidget {
@@ -120,16 +113,9 @@ class Login_3_A extends StatelessWidget {
             ),
             SizedBox(height: Screenheight * 0.05),
             Button(
-<<<<<<< HEAD:lib/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart
                 Screenheight: Screenheight,
                 NameButton: "Log In",
                 Location: MotivationScreen()),
-=======
-              Screenheight: Screenheight,
-              NameButton: "Log In",
-              Location: MotivationScreen(),
-            ),
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399:lib/LoginScreens/3.0_Log_In/Login_3_A.dart
             SizedBox(height: Screenheight * 0.04),
             Text(
               "or sign up with",
@@ -177,7 +163,6 @@ class Login_3_A extends StatelessWidget {
                       color: AppColors.TextColor, fontWeight: FontWeight.w300),
                 ),
                 TextButton(
-<<<<<<< HEAD:lib/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
@@ -191,21 +176,6 @@ class Login_3_A extends StatelessWidget {
                           color: AppColors.buttonandIConColor,
                           fontWeight: FontWeight.w300),
                     ))
-=======
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return Login_3_B();
-                      },
-                    ));
-                  },
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                        color: Color(0xFFE2F163), fontWeight: FontWeight.w300),
-                  ),
-                ),
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399:lib/LoginScreens/3.0_Log_In/Login_3_A.dart
               ],
             )
           ],

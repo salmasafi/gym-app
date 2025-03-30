@@ -103,11 +103,7 @@ class _Sc406State extends State<Sc406> {
                         ],
                       ),
                     ),
-<<<<<<< HEAD
                     SizedBox(height: 20.h),
-=======
-
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.dm),
                       decoration: BoxDecoration(
@@ -226,7 +222,6 @@ class _Sc406State extends State<Sc406> {
                 ),
               ),
             ),
-<<<<<<< HEAD
             SizedBox(
               height: 10.h,
             ),
@@ -253,36 +248,6 @@ class _Sc406State extends State<Sc406> {
                       fontWeight: FontWeight.w700,
                       color: AppColors.whiteColor),
                 ))
-=======
-            OutlinedButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
-                shape: WidgetStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                      20.dm,
-                    ),
-                  ),
-                ),
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Sc407(),
-                    ));
-              },
-              child: Text(
-                "Continue",
-                style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.whiteColor),
-              ),
-            ),
-            SizedBox(height: 15.h,),
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
           ],
         ),
       ),

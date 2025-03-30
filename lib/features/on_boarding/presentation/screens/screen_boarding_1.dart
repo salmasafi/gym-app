@@ -152,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   // Next / Get Started Button
                   Positioned(
-                    top: screenHeight * 0.7,
+                    top: screenHeight * 0.75,
                     left: 0,
                     right: 0,
                     child: Center(
@@ -160,6 +160,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         onTap: () {
                           if (_currentIndex == _onboardingData.length - 1) {
                             // Navigate to home screen
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Login_3_A()),
+                            );
                           } else {
                             _controller.nextPage(
                               duration: Duration(milliseconds: 300),
@@ -202,72 +207,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        SmoothPageIndicator(
-                          controller: _controller,
-                          count: _onboardingData.length,
-                          effect: WormEffect(
-                            activeDotColor: Color(0xFFE2F163),
-                            dotColor: Colors.white,
-                            dotHeight: 8,
-                            dotWidth: 8,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        GestureDetector(
-                          onTap: () {
-                            if (_currentIndex == _onboardingData.length - 1) {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Login_3_A()),
-                              );
-                            } else {
-                              _controller.nextPage(
-                                duration: Duration(milliseconds: 300),
-                                curve: Curves.easeIn,
-                              );
-                            }
-                          },
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Stack(
-                              children: [
-                                BackdropFilter(
-                                  filter:
-                                      ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                                  child: Container(
-                                    width: screenWidth * 0.53,
-                                    height: screenHeight * 0.05,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(
-                                          color: Colors.white, width: 0.3),
-                                      color:
-                                          Color.fromRGBO(255, 255, 255, 0.09),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Center(
-                                    child: Text(
-                                      _currentIndex ==
-                                              _onboardingData.length - 1
-                                          ? "Get Started"
-                                          : "Next",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: "Poppins",
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
                       ),

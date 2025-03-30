@@ -6,16 +6,18 @@ class SignUp_Icons extends StatelessWidget {
     required this.Screenheight,
     required this.ScreenWidth,
     required this.Images,
+    this.onTap,
   });
 
   final double Screenheight;
   final double ScreenWidth;
   final String Images;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         height: Screenheight * 0.05,
         width: ScreenWidth * 0.12,
