@@ -97,7 +97,7 @@ class Body extends StatelessWidget {
         SizedBox(
           height: 30,
         ),
-        buildMenuItem(Icons.person, "Profile", () {
+        buildMenuItem(Icons.person, "Profile", onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -109,7 +109,6 @@ class Body extends StatelessWidget {
         buildMenuItem(Icons.lock_rounded, "Privacy Policy"),
         buildMenuItem(Icons.settings, "Settings"),
         buildMenuItem(Icons.phone_callback_sharp, "Help"),
-<<<<<<< HEAD
         buildMenuItem(Icons.exit_to_app_rounded, "Logout",onTap: () => _showLogoutDialog(context))
 
       ],
@@ -181,11 +180,6 @@ class Body extends StatelessWidget {
   }
 
 }
-=======
-        buildMenuItem(Icons.exit_to_app_rounded, "Logout")
-      ],
-    );
-  }
 
   Widget buildMenuItem(IconData icon, String text, [VoidCallback? onTap]) {
     return ListTile(
@@ -208,5 +202,3 @@ class Body extends StatelessWidget {
         ),
         onTap: onTap);
   }
-}
->>>>>>> fb21f0e4b5cf3571fc21a1243f2b52d890c8691d

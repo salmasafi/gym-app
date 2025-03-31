@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/core/widgets/custom_button.dart';
-<<<<<<< HEAD
 import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
-=======
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
 import 'package:gym_app/features/set_up/presentation/screens/sc_405.dart';
 import 'package:numberpicker/numberpicker.dart';
 
@@ -79,9 +76,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
             ),
             child: BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
               builder: (context, state) {
-                final isKg =
-                    context.read<BmiInfoRequestCubit>().weightUnit == "KG";
-
+                final isKg = context.read<BmiInfoRequestCubit>().weightUnit == "KG";
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -98,8 +93,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
                         ),
                       ),
                     ),
-                    VerticalDivider(
-                        color: Colors.black, thickness: 1, width: 20),
+                    VerticalDivider(color: Colors.black, thickness: 1, width: 20),
                     GestureDetector(
                       onTap: () {
                         context.read<BmiInfoRequestCubit>().getWeightUnit("LB");
@@ -122,8 +116,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-<<<<<<< HEAD
-              color: Colors.purple.shade200,
+              color: AppColors.primaryColor,
             ),
             padding: EdgeInsets.symmetric(vertical: 10),
             child: BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
@@ -145,37 +138,12 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
                     fontSize: 18,
                   ),
                   onChanged: (value) {
-                    weight = value;
-                    context
-                        .read<BmiInfoRequestCubit>()
-                        .getWeightValue(weight.toString());
+                    setState(() {
+                      weight = value;
+                    });
+                    context.read<BmiInfoRequestCubit>().getWeightValue(weight.toString());
                   },
                 );
-=======
-              color: AppColors.primaryColor,
-            ),
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: NumberPicker(
-              value: _currentWeight,
-              itemHeight: 50,
-              itemCount: 6,
-              minValue: 30,
-              maxValue: 200,
-              axis: Axis.horizontal,
-              selectedTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-              textStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
-              onChanged: (value) {
-                setState(() {
-                  _currentWeight = value;
-                });
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
               },
             ),
           ),
@@ -184,11 +152,8 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           SizedBox(height: 5),
           BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
             builder: (context, state) {
-              final weightValue =
-                  context.read<BmiInfoRequestCubit>().weightValue ?? 60;
-              final weightUnit =
-                  context.read<BmiInfoRequestCubit>().weightUnit ?? "KG";
-
+              final weightValue = context.read<BmiInfoRequestCubit>().weightValue ?? 60;
+              final weightUnit = context.read<BmiInfoRequestCubit>().weightUnit ?? "KG";
               return Text(
                 "$weightValue $weightUnit",
                 style: TextStyle(
@@ -205,13 +170,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
             onPress: () {
               Navigator.push(
                 context,
-<<<<<<< HEAD
                 MaterialPageRoute(builder: (context) => Sc405()),
-=======
-                MaterialPageRoute(
-                  builder: (context) => Sc405(),
-                ),
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
               );
             },
             width: 178,

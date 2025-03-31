@@ -1,23 +1,17 @@
+
+// This is the Sign Up Screen
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-<<<<<<< HEAD:lib/Presentation/LoginScreens/3.0_Log_In/Login_3_B.dart
-import 'package:gym_app/Presentation/LoginScreens/3.0_Log_In/Login_3_A.dart';
+import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/B_3.1_Set_Password.dart';
+import 'package:gym_app/Presentation/LoginScreens/Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
 import 'package:gym_app/core/Widgets_Login/button.dart';
 import 'package:gym_app/core/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/core/Widgets_Login/sign_up__icons.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields.dart';
 import 'package:gym_app/core/Widgets_Login/text_fields__passwords.dart';
 import 'package:gym_app/core/utils/colors.dart';
-=======
-import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
-import 'package:gym_app/LoginScreens/Forgot_and_Reset_Password/B_3.1_Set_Password.dart';
-import 'package:gym_app/Widgets/Widgets.dart';
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399:lib/LoginScreens/3.0_Log_In/Login_3_B.dart
 
-import '../Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
-
-// This is the Sign Up Screen
 class Login_3_B extends StatelessWidget {
   const Login_3_B({super.key});
 

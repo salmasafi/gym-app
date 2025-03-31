@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gym_app/core/utils/colors.dart';
 import 'package:gym_app/features/Logic/Cubit/cubit/bmi_info_request_cubit.dart';
 import 'package:gym_app/features/set_up/presentation/screens/sc_406.dart';
+
+import '../../../../core/utils/colors.dart';
 
 class Sc405 extends StatefulWidget {
   const Sc405({super.key});
@@ -72,7 +73,6 @@ class _Sc401State extends State<Sc405> {
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w800),
             ),
-<<<<<<< HEAD
             BlocBuilder<BmiInfoRequestCubit, BmiInfoRequestState>(
               builder: (context, state) {
                 return Row(
@@ -92,9 +92,9 @@ class _Sc401State extends State<Sc405> {
                                 thumbColor: AppColors.secondaryColor,
                                 overlayColor:
                                     AppColors.secondaryColor.withValues(),
-                                trackHeight: 20,
+                                trackHeight: 50,
                                 thumbShape: const RoundSliderThumbShape(
-                                    enabledThumbRadius: 5),
+                                    enabledThumbRadius: 20),
                               ),
                               child: BlocBuilder<BmiInfoRequestCubit,
                                   BmiInfoRequestState>(
@@ -104,54 +104,25 @@ class _Sc401State extends State<Sc405> {
                                     max: 220,
                                     value: height.toDouble(),
                                     onChanged: (value) {
-                                      height = value.toInt();
-                                      context
-                                          .read<BmiInfoRequestCubit>()
-                                          .getHeightValue(height.toString());
+                                      setState(() {
+                                        height = value.toInt();
+                                        context
+                                            .read<BmiInfoRequestCubit>()
+                                            .getHeightValue(height.toString());
 
-                                      context
-                                          .read<BmiInfoRequestCubit>()
-                                          .getHeightUnit("Cm");
+                                        context
+                                            .read<BmiInfoRequestCubit>()
+                                            .getHeightUnit("Cm");
+                                      });
                                     },
                                   );
                                 },
                               ),
                             ),
-=======
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Center(
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.4,
-                      width: MediaQuery.of(context).size.width * 0.1,
-                      child: RotatedBox(
-                        quarterTurns: -1,
-                        child: SliderTheme(
-                          data: SliderTheme.of(context).copyWith(
-                            activeTrackColor: AppColors.primaryColor,
-                            inactiveTrackColor: AppColors.primaryColor,
-                            thumbColor: AppColors.secondaryColor,
-                            overlayColor: AppColors.secondaryColor.withValues(),
-                            trackHeight: 50,
-                            thumbShape: const RoundSliderThumbShape(
-                                enabledThumbRadius: 20),
-                          ),
-                          child: Slider(
-                            min: 140,
-                            max: 220,
-                            value: _height,
-                            onChanged: (value) {
-                              setState(() {
-                                _height = value;
-                              });
-                            },
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 );
               },
@@ -161,25 +132,22 @@ class _Sc401State extends State<Sc405> {
             ),
             OutlinedButton(
               style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
-                  shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                    20,
-                  )))),
+                backgroundColor: WidgetStatePropertyAll(AppColors.blackColor),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      20,
+                    ),
+                  ),
+                ),
+              ),
               onPressed: () {
                 Navigator.push(
-<<<<<<< HEAD
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Sc406(),
-                    ));
-=======
                   context,
                   MaterialPageRoute(
                     builder: (context) => Sc406(),
                   ),
                 );
->>>>>>> e5fa348127a5a97fff24bf7a33f4446de2abf399
               },
               child: Text(
                 "Continue",
