@@ -7,10 +7,9 @@ import 'package:gym_app/Widgets/Widgets_Login/button.dart';
 import 'package:gym_app/Widgets/Widgets_Login/name__for__text_field.dart';
 import 'package:gym_app/Widgets/Widgets_Login/text_fields.dart';
 import 'package:gym_app/Widgets/Widgets_Login/text_fields__passwords.dart';
+import 'package:gym_app/Screens/set_up/presentation/screens_Setup/setup_screen.dart';
 import 'package:gym_app/core/utils/colors.dart';
 import '../../../Widgets/Widgets_Login/sign_up__icons.dart';
-import 'package:gym_app/Screens/LoginScreens/Forgot_and_Reset_Password/C_3.1_Set_Your_Fingerprint.dart';
-import 'package:gym_app/Screens/set_up/presentation/screens/setup_screen.dart';
 
 class Login_3_A extends StatelessWidget {
   const Login_3_A({super.key});
@@ -139,14 +138,6 @@ class Login_3_A extends StatelessWidget {
                 ),
                 SizedBox(width: ScreenWidth * 0.04),
                 SignUp_Icons(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => fingerPrint(),
-                      ),
-                    );
-                  },
                   Screenheight: Screenheight,
                   ScreenWidth: ScreenWidth,
                   Images: "Fingerprint Icon.png",
@@ -163,19 +154,20 @@ class Login_3_A extends StatelessWidget {
                       color: AppColors.TextColor, fontWeight: FontWeight.w300),
                 ),
                 TextButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return Login_3_B();
-                        },
-                      ));
-                    },
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          color: AppColors.buttonandIConColor,
-                          fontWeight: FontWeight.w300),
-                    ))
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Login_3_B();
+                      },
+                    ));
+                  },
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                        color: AppColors.buttonandIConColor,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
               ],
             )
           ],

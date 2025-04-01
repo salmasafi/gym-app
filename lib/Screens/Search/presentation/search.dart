@@ -78,7 +78,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
       ),
-      backgroundColor: AppColors.backgroundColors,
+      backgroundColor: AppColors.background,
       body: Padding(
         padding: const EdgeInsets.only(top: 65, right: 20, left: 20),
         child: Column(
@@ -135,16 +135,16 @@ class Header extends StatelessWidget {
         Text(
           "Search",
           style: TextStyle(
-            color: AppColors.TextColor,
+            color: AppColors.text,
             fontFamily: "Poppins",
             fontSize: screenWidth * 0.07,
             fontWeight: FontWeight.w700,
           ),
         ),
         const Spacer(),
-        Icon(Icons.notifications, color: AppColors.TextColor, size: 30),
+        Icon(Icons.notifications, color: AppColors.text, size: 30),
         const SizedBox(width: 20),
-        Icon(Icons.person, color: AppColors.TextColor, size: 30),
+        Icon(Icons.person, color: AppColors.text, size: 30),
       ],
     );
   }
@@ -214,7 +214,7 @@ class FilterButtons extends StatelessWidget {
             style: TextStyle(
                 fontFamily: "Poppins",
                 fontWeight: FontWeight.w500,
-                color: AppColors.TextColor),
+                color: AppColors.text),
           ),
         );
       }).toList(),

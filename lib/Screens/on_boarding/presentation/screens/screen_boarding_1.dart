@@ -152,14 +152,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   // Next / Get Started Button
                   Positioned(
-                    top: screenHeight * 0.75,
+                    top: screenHeight * 0.7,
                     left: 0,
                     right: 0,
                     child: Center(
                       child: GestureDetector(
                         onTap: () {
                           if (_currentIndex == _onboardingData.length - 1) {
-                            // Navigate to home screen
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
@@ -181,12 +180,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                                 child: Container(
                                   width: screenWidth * 0.53,
-                                  height: screenHeight * 0.06,
+                                  height: screenHeight * 0.05,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
-                                        color: AppColors.whiteColor,
-                                        width: 0.3),
+                                        color: Colors.white, width: 0.3),
                                     color: Color.fromRGBO(255, 255, 255, 0.09),
                                   ),
                                 ),
@@ -198,10 +196,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                         ? "Get Started"
                                         : "Next",
                                     style: TextStyle(
-                                      color: AppColors.whiteColor,
+                                      color: Colors.white,
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w700,
-                                      fontSize: screenWidth * 0.045,
+                                      fontSize: 18,
                                     ),
                                   ),
                                 ),

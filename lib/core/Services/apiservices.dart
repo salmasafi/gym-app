@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:gym_app/models/Models/api_model.dart';
 
 class Apiservices {
   Response? response;

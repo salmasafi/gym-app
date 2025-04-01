@@ -12,7 +12,7 @@ class SignUp_Icons extends StatelessWidget {
   final double Screenheight;
   final double ScreenWidth;
   final String Images;
-  final VoidCallback? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
