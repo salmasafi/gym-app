@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:gym_app/core/Models/api_model.dart';
+import 'package:gym_app/models/Models/api_model.dart';
 
 class Apiservices {
   Response? response;
@@ -17,7 +17,8 @@ class Apiservices {
       String password,
       String nickname) async {
     try {
-      response = await dio.post("https://www.gymfit.somee.com/api/Auth/register/trainee",
+      response = await dio.post(
+          "https://www.gymfit.somee.com/api/Auth/register/trainee",
           data: {
             "Email": email,
             "Age": age,
@@ -29,8 +30,8 @@ class Apiservices {
             "Nickname": nickname
           },
           options: Options(headers: {'Content-Type': 'application/json'}));
-          print(response!.data) ;
-     } catch (e) {
+      print(response!.data);
+    } catch (e) {
       print(e);
     }
     // return ApiModels(

@@ -15,11 +15,11 @@ dependencies:
   numberpicker: ^2.1.2
   dio: ^5.8.0+1
   flutter_bloc: ^9.0.0
-<<<<<<< HEAD
   image_picker: ^1.1.2
+<<<<<<< HEAD
 =======
->>>>>>> 2199e6c14a5c7e44f255798e373712280c48e7a5
 
+>>>>>>> Youssef
 
 dev_dependencies:
   flutter_test:
@@ -39,7 +39,6 @@ flutter:
          - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
 
   assets:
-
      - assets/images/
      - assets/images/on_boarding_background_1.png
      - assets/images/Rectangle.png

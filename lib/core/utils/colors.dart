@@ -8,4 +8,10 @@ class AppColors {
   static Color whiteColor = Colors.white;
   static Color purple = const Color(0xFF896CFE);
   static Color purple2 = const Color(0xFFB3A0FF);
+
+  //3.0 login
+  static Color TextColor = const Color(0xFFFFFFFF);
+  static Color backgroundColors = const Color(0xFF232323);
+  static Color buttonandIConColor = const Color(0xFFE2F163);
+  static Color pinkcontainer = const Color(0xFFB3A0FF);
 }

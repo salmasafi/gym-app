@@ -1,0 +1,2 @@
+C:/MyFolders/VS codes/gym-app/android/app/.cxx/Debug/0265p404/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/MyFolders/VS codes/gym-app/android/app/.cxx/Debug/0265p404/armeabi-v7a/CMakeFiles/rebuild_cache.dir
