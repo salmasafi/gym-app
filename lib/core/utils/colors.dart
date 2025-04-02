@@ -14,4 +14,9 @@ class AppColors {
   static Color backgroundColors = const Color(0xFF232323);
   static Color buttonandIConColor = const Color(0xFFE2F163);
   static Color pinkcontainer = const Color(0xFFB3A0FF);
+<<<<<<< HEAD
+=======
+  static Color background = Color(0xff212020);
+  static Color text = Color(0xff896CFE);
+>>>>>>> 2f738edde9eb57052c55a7ba9a931ae7259b4816
 }

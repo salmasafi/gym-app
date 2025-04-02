@@ -1,0 +1,2 @@
+C:/MyFolders/VS codes/gym-app/android/app/.cxx/Debug/4m5z5f51/x86/CMakeFiles/edit_cache.dir
+C:/MyFolders/VS codes/gym-app/android/app/.cxx/Debug/4m5z5f51/x86/CMakeFiles/rebuild_cache.dir

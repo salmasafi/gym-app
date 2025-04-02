@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gym_app/LoginScreens/3.0_Log_In/Login_3_A.dart';
 import 'package:gym_app/core/Models/api_model.dart';
 import 'package:gym_app/core/Services/apiservices.dart';
-import 'package:gym_app/features/homescreen/presentation/screens/home_screen.dart';
+import 'package:gym_app/Screens/screens_Home/home_screen.dart';
 
 part 'startbutton_state.dart';
 
