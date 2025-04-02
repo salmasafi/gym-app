@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
   smooth_page_indicator: ^1.2.1
   google_fonts: ^6.2.1
   flutter_screenutil: ^5.9.3
@@ -16,6 +17,10 @@ dependencies:
   dio: ^5.8.0+1
   flutter_bloc: ^9.0.0
   image_picker: ^1.1.2
+=======
+  smooth_page_indicator: ^1.1.0
+  http: ^0.13.3 
+>>>>>>> saif
 
 dev_dependencies:
   flutter_test:

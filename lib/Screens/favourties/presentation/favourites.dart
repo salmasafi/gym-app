@@ -126,6 +126,7 @@ class _FavouritesState extends State<Favourites> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -362,7 +363,10 @@ class FilterButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const FilterButton(
-      {required this.label, required this.selected, required this.onTap});
+      {super.key,
+      required this.label,
+      required this.selected,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
