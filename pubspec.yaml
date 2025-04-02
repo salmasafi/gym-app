@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   smooth_page_indicator: ^1.1.0
+  http: ^0.13.3 
 
 dev_dependencies:
   flutter_test:

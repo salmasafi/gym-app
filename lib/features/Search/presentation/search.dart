@@ -24,22 +24,21 @@ class _SearchScreenState extends State<SearchScreen> {
       bottomNavigationBar: Container(
         height: screenWidth * 0.18,
         decoration: BoxDecoration(
-          color: AppColors.primaryColor, // Background color
-          borderRadius: BorderRadius.circular(20), // Rounded corners
+          color: AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.3), // Shadow color
+              color: Colors.black.withOpacity(0.3),
               spreadRadius: 2,
               blurRadius: 10,
-              offset: Offset(0, 3), // Adjust elevation effect
+              offset: const Offset(0, 3),
             ),
           ],
         ),
         child: ClipRRect(
-          borderRadius:
-              BorderRadius.circular(20), // Clip to match rounded corners
+          borderRadius: BorderRadius.circular(20),
           child: BottomNavigationBar(
-            elevation: 10, // Adds elevation
+            elevation: 10,
             iconSize: screenWidth * 0.0875,
             type: BottomNavigationBarType.fixed,
             backgroundColor: AppColors.primaryColor,
@@ -48,7 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
             items: const [
               BottomNavigationBarItem(
                 icon: Padding(
-                  padding: EdgeInsets.only(top: 3), // Adjust top/bottom padding
+                  padding: EdgeInsets.only(top: 3),
                   child: Icon(Icons.home_filled),
                 ),
                 label: "",
@@ -80,46 +79,105 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: const EdgeInsets.only(top: 65, right: 20, left: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Header(screenWidth: screenWidth),
-            const SizedBox(height: 20),
-            SearchBar(),
-            const SizedBox(height: 20),
-            FilterButtons(
-              selectedCategory: selectedCategory,
-              onCategoryChanged: (category) {
-                setState(() => selectedCategory = category);
-              },
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "Top Searches",
-              style: TextStyle(
-                color: AppColors.secondaryColor,
-                fontSize: 24,
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.bold,
+        padding: EdgeInsets.only(
+            top: screenWidth * 0.16,
+            right: screenWidth * 0.05,
+            left: screenWidth * 0.05),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Header(screenWidth: screenWidth),
+              SizedBox(height: screenWidth * 0.05),
+              const SearchBar(),
+              SizedBox(height: screenWidth * 0.05),
+              FilterButtons(
+                selectedCategory: selectedCategory,
+                onCategoryChanged: (category) {
+                  setState(() => selectedCategory = category);
+                },
               ),
-            ),
-            const SizedBox(height: 10),
-            Column(
-              children: (topSearches[selectedCategory] ?? [])
-                  .map((search) => SearchItem(search))
-                  .toList(),
-            ),
-            const SizedBox(height: 20),
-            Expanded(child: ContentList()),
-          ],
+              if (selectedCategory == "All")
+                Column(children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: screenWidth * 0.04),
+                    child: const cardExercise(),
+                  ),
+                  ContentList(),
+                ])
+              else if (selectedCategory == "Workout")
+                Column(
+                  children: (topSearches["Workout"] ?? [])
+                      .map((search) => SearchItem(search))
+                      .toList(),
+                )
+              else if (selectedCategory == "Nutrition")
+                Column(
+                  children: (topSearches["Nutrition"] ?? [])
+                      .map((search) => SearchItem(search))
+                      .toList(),
+                ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-// 🔹 Header Component
+class cardExercise extends StatelessWidget {
+  const cardExercise({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ExerciseCard(
+          imagePath: 'assets/images/Container_image2.png',
+          title: 'Squat Exercise',
+          duration: '12 Minutes',
+          calories: '120 Kcal',
+          width: screenWidth * 0.42,
+          height: screenWidth * 0.45,
+        ),
+        SizedBox(width: screenWidth * 0.04),
+        ExerciseCard(
+          imagePath: 'assets/images/Container_image1.png',
+          title: 'Full Body Stretching',
+          duration: '12 Minutes',
+          calories: '120 Kcal',
+          width: screenWidth * 0.42,
+          height: screenWidth * 0.45,
+        ),
+      ],
+    );
+  }
+}
+
+class TopSearches extends StatelessWidget {
+  const TopSearches({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Text(
+      "Top Searches",
+      style: TextStyle(
+        color: AppColors.secondaryColor,
+        fontSize: screenWidth * 0.06,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+}
+
 class Header extends StatelessWidget {
   final double screenWidth;
 
@@ -130,8 +188,8 @@ class Header extends StatelessWidget {
     return Row(
       children: [
         Icon(Icons.arrow_left_outlined,
-            color: AppColors.secondaryColor, size: 30),
-        const SizedBox(width: 10),
+            color: AppColors.secondaryColor, size: screenWidth * 0.075),
+        SizedBox(width: screenWidth * 0.025),
         Text(
           "Search",
           style: TextStyle(
@@ -142,29 +200,32 @@ class Header extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Icon(Icons.notifications, color: AppColors.text, size: 30),
-        const SizedBox(width: 20),
-        Icon(Icons.person, color: AppColors.text, size: 30),
+        Icon(Icons.notifications,
+            color: AppColors.text, size: screenWidth * 0.075),
+        SizedBox(width: screenWidth * 0.05),
+        Icon(Icons.person, color: AppColors.text, size: screenWidth * 0.075),
       ],
     );
   }
 }
 
-// 🔹 Search Bar Component
 class SearchBar extends StatelessWidget {
+  const SearchBar({super.key});
+
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: 50,
+      height: screenWidth * 0.125,
       child: TextField(
-        style: const TextStyle(color: Colors.black, fontSize: 16),
+        style: TextStyle(color: Colors.black, fontSize: screenWidth * 0.04),
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
           hintText: 'Search',
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
             color: Colors.grey,
-            fontSize: 16,
+            fontSize: screenWidth * 0.04,
             fontFamily: "Poppins",
           ),
           border: OutlineInputBorder(
@@ -185,7 +246,6 @@ class SearchBar extends StatelessWidget {
   }
 }
 
-// 🔹 Filter Buttons Component
 class FilterButtons extends StatelessWidget {
   final String selectedCategory;
   final Function(String) onCategoryChanged;
@@ -198,6 +258,7 @@ class FilterButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: ["All", "Workout", "Nutrition"].map((label) {
@@ -214,7 +275,8 @@ class FilterButtons extends StatelessWidget {
             style: TextStyle(
                 fontFamily: "Poppins",
                 fontWeight: FontWeight.w500,
-                color: AppColors.text),
+                color: AppColors.text,
+                fontSize: screenWidth * 0.035),
           ),
         );
       }).toList(),
@@ -222,7 +284,6 @@ class FilterButtons extends StatelessWidget {
   }
 }
 
-// 🔹 Search Item Component
 class SearchItem extends StatelessWidget {
   final String title;
 
@@ -230,11 +291,12 @@ class SearchItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: 50,
+      height: screenWidth * 0.125,
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.only(left: 10),
+      margin: EdgeInsets.symmetric(vertical: screenWidth * 0.025),
+      padding: EdgeInsets.only(left: screenWidth * 0.025),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(40),
@@ -242,23 +304,23 @@ class SearchItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: 50,
-            width: 50,
+            height: screenWidth * 0.125,
+            width: screenWidth * 0.125,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle, color: Colors.yellow),
-            child: const Icon(Icons.search, color: Colors.purple, size: 30),
+            child: Icon(Icons.search,
+                color: Colors.purple, size: screenWidth * 0.075),
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: screenWidth * 0.025),
           Text(title,
-              style:
-                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              style: TextStyle(
+                  fontSize: screenWidth * 0.04, fontFamily: "Poppins")),
         ],
       ),
     );
   }
 }
 
-// 🔹 Content List Component
 class ContentList extends StatelessWidget {
   final List<Map<String, dynamic>> content = [
     {
@@ -291,120 +353,266 @@ class ContentList extends StatelessWidget {
     },
   ];
 
+  ContentList({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: content.length,
-      itemBuilder: (context, index) {
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 8),
-          padding: const EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        content[index]["title"],
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Poppins",
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.access_time_filled_rounded,
-                                color: Colors.black,
-                                size: 15,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                "${content[index]["time"]}",
-                                style: TextStyle(fontFamily: "Poppins"),
-                              ),
-                            ],
+    double screenWidth = MediaQuery.of(context).size.width;
+    return SizedBox(
+      height: screenWidth * 0.9,
+      child: ListView.builder(
+        itemCount: content.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: screenWidth * 0.02),
+            padding: EdgeInsets.only(left: screenWidth * 0.025),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          content[index]["title"],
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.045,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Poppins",
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.local_fire_department_outlined,
-                                color: Colors.black,
-                                size: 15,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                "${content[index]["calories"]}",
-                                style: TextStyle(fontFamily: "Poppins"),
-                              ),
-                            ],
+                        ),
+                        SizedBox(height: screenWidth * 0.0125),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            content[index]["time"] != null &&
+                                    content[index]["time"]
+                                        .toString()
+                                        .trim()
+                                        .isNotEmpty
+                                ? Row(
+                                    children: [
+                                      Icon(
+                                        Icons.access_time_filled_outlined,
+                                        color: Colors.black,
+                                        size: screenWidth * 0.0375,
+                                      ),
+                                      SizedBox(width: screenWidth * 0.0125),
+                                      Text(
+                                        "${content[index]["time"]}",
+                                        style: TextStyle(fontFamily: "Poppins"),
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                            content[index]["calories"] != null &&
+                                    content[index]["calories"]
+                                        .toString()
+                                        .trim()
+                                        .isNotEmpty
+                                ? Row(
+                                    children: [
+                                      Icon(
+                                        Icons.local_fire_department_outlined,
+                                        color: Colors.black,
+                                        size: screenWidth * 0.0375,
+                                      ),
+                                      SizedBox(width: screenWidth * 0.0125),
+                                      Text(
+                                        "${content[index]["calories"]}",
+                                        style: const TextStyle(
+                                            fontFamily: "Poppins"),
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                            content[index]["excercise"] != null &&
+                                    content[index]["excercise"]
+                                        .toString()
+                                        .trim()
+                                        .isNotEmpty
+                                ? Row(
+                                    children: [
+                                      Icon(
+                                        Icons.directions_run_rounded,
+                                        color: Colors.black,
+                                        size: screenWidth * 0.0375,
+                                      ),
+                                      SizedBox(width: screenWidth * 0.0125),
+                                      Text(
+                                        "${content[index]["excercise"]}",
+                                        style: const TextStyle(
+                                            fontFamily: "Poppins"),
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                          ],
+                        )
+                      ],
+                    ),
+                    const Spacer(),
+                    Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            content[index]["image"].toString(),
+                            fit: BoxFit.fill,
+                            width: screenWidth * 0.38,
+                            height: screenWidth * 0.375,
                           ),
-                          if (content[index]["excercise"] != null &&
-                              content[index]["excercise"]
-                                  .toString()
-                                  .trim()
-                                  .isNotEmpty)
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.directions_run_rounded,
-                                  color: Colors.black,
-                                  size: 15,
-                                ),
-                                SizedBox(width: 5),
-                                Text(
-                                  "${content[index]["excercise"]}",
-                                  style: TextStyle(fontFamily: "Poppins"),
-                                ),
-                              ],
-                            ),
-                        ],
-                      )
-                    ],
-                  ),
-                  Spacer(),
-                  Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius:
-                            BorderRadius.circular(15), // Rounded corners
-                        child: Image.asset(
-                          content[index]["image"].toString(),
-                          fit: BoxFit.fill,
-                          width: 160,
-                          height: 150,
                         ),
-                      ),
-                      Positioned(
-                        top: 8,
-                        right: 8,
-                        child: Icon(
-                          Icons.star_rate_rounded,
-                          color: Colors.white,
-                          size: 28,
+                        Positioned(
+                          top: screenWidth * 0.02,
+                          right: screenWidth * 0.02,
+                          child: Icon(
+                            Icons.star_rate_rounded,
+                            color: Colors.white,
+                            size: screenWidth * 0.07,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
 
-// 🔹 Bottom Navigation Bar Component
+class ExerciseCard extends StatelessWidget {
+  final String imagePath;
+  final String title;
+  final String duration;
+  final String calories;
+  final double width;
+  final double height;
+
+  const ExerciseCard({
+    required this.imagePath,
+    required this.title,
+    required this.duration,
+    required this.calories,
+    required this.width,
+    required this.height,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            blurRadius: 5,
+            spreadRadius: 1,
+            offset: const Offset(4, 4),
+          ),
+        ],
+        border: Border.all(color: Colors.white),
+        color: const Color(0xFF232323),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
+            ),
+            child: Stack(
+              children: [
+                Image.asset(
+                  imagePath,
+                  width: width,
+                  height: height * 0.6,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  top: screenWidth * 0.02,
+                  right: screenWidth * 0.02,
+                  child: Icon(
+                    Icons.star,
+                    color: AppColors.secondaryColor,
+                    size: screenWidth * 0.05,
+                  ),
+                ),
+                Positioned(
+                  bottom: screenWidth * 0.0125,
+                  right: screenWidth * 0.02,
+                  child: CircleAvatar(
+                    backgroundColor: AppColors.text,
+                    radius: screenWidth * 0.03,
+                    child: Icon(
+                      Icons.play_arrow,
+                      color: Colors.white,
+                      size: screenWidth * 0.04,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(screenWidth * 0.02),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                      color: AppColors.secondaryColor,
+                      fontSize: screenWidth * 0.035,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Poppins"),
+                ),
+                SizedBox(height: screenWidth * 0.01),
+                Row(
+                  children: [
+                    Icon(Icons.access_time_filled_outlined,
+                        color: AppColors.text, size: screenWidth * 0.035),
+                    SizedBox(width: screenWidth * 0.005),
+                    Text(
+                      duration,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenWidth * 0.03,
+                          fontFamily: "Poppins"),
+                    ),
+                    SizedBox(
+                      width: screenWidth * 0.01,
+                    ),
+                    Icon(Icons.local_fire_department,
+                        color: AppColors.text, size: screenWidth * 0.035),
+                    SizedBox(width: screenWidth * 0.003),
+                    Text(
+                      calories,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenWidth * 0.03,
+                          fontFamily: "Poppins"),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
