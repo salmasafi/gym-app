@@ -7,10 +7,10 @@ class ApiService {
 
   Future<void> sendBMIWithDelay(BMI_Request bmi) async {
     await Future.delayed(Duration(seconds: 2));
-    await sendBMI(bmi);
+    await calculateBMI(bmi);
   }
 
-  Future<Map<String, dynamic>?> sendBMI(BMI_Request bmi) async {
+  Future<Map<String, dynamic>?> calculateBMI(BMI_Request bmi) async {
     String url = "$baseUrl/api/Bmi/calculate";
 
     if (bmi.weightvalue == null ||

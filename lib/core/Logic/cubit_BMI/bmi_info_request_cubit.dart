@@ -73,7 +73,7 @@ class BmiInfoRequestCubit extends Cubit<BmiInfoRequestState> {
         hip: hip!,
       );
 
-      await ApiService().sendBMI(bmiRequest);
+      await ApiService().calculateBMI(bmiRequest);
     } catch (e) {
       print(e.toString());
     }

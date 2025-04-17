@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gym_app/core/Models/api_model.dart';
-import 'package:gym_app/core/Services/apiservices.dart';
-import 'package:gym_app/Screens/screens_Home/home_screen.dart';
-
+import 'package:gym_app/features/Screens/screens_Home/home_screen.dart';
+import 'package:gym_app/core/Services/auth_apiservices.dart';
 part 'startbutton_state.dart';
-
-ApiModels? apiModels;
 
 class StartbuttonCubit extends Cubit<StartbuttonState> {
   StartbuttonCubit() : super(StartbuttonInitial());
 
-  void postdata(
+  void register(
       BuildContext context,
       String email,
       String name,
@@ -25,17 +21,21 @@ class StartbuttonCubit extends Cubit<StartbuttonState> {
     emit(StartbuttonLoading());
 
     try {
-      await Apiservices().postData(
+      bool result = await Apiservices().register(
           email, name, age, sex, image, weight, height, password, nickname);
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
-      emit(StartbuttonInitial());
+      if (result == true) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
+        emit(StartbuttonSuccess());
+      } else {
+        emit(StartbuttonError('something wrong with api request'));
+      }
     } catch (e) {
       print(e);
+      emit(StartbuttonError(e.toString()));
     }
-    emit(StartbuttonError());
   }
 }

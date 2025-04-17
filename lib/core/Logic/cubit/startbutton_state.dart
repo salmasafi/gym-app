@@ -9,11 +9,12 @@ class StartbuttonState {
     ) ;
  } 
 class StartbuttonError extends StartbuttonState {
-
+String e;
+StartbuttonError(this.e);
 }
 class StartbuttonLoading extends StartbuttonState {
 
 } 
- class StartbuttonSuccess extends StartbuttonState{
-  
- }
+
+class StartbuttonSuccess extends StartbuttonState{}
+
